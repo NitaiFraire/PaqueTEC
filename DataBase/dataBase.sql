@@ -1,137 +1,195 @@
-create DATABASE ventas;
-USE ventas;
+# Drop database paqueteria #
 
-CREATE TABLE clientes(
+create DATABASE paqueteria;
+USE paqueteria;
 
-    id_cliente      int(255) auto_increment not null,
-    id_correo       int(255) not null,
-    id_telefono     int(255) not null,
+
+#*********** Tabla Paises ***********#
+
+CREATE TABLE paises(
+
+    id              int(255) auto_increment not null,
     nombre          varchar(255) not null,
-    paterno         varchar(255) not null,
-    materno         varchar(255),
-    genero          varchar(10) not null,
-    edad            int(3) not null,
-    rfc             varchar(13) not null,
-    curp            varchar(18) not null,
-    domicilio       varchar(255) not null,
-    
 
-    CONSTRAINT pk_id_cliente PRIMARY KEY(id_cliente),
-
-    CONSTRAINT uq_rfc UNIQUE(rfc),
-    CONSTRAINT uq_curp UNIQUE(curp),
-
-    CONSTRAINT ck_genero CHECK (genero = 'masculino' OR genero = 'femenino');
-
-    CONSTRAINT fk_clientes_correo FOREIGN KEY(id_correo) REFERENCES correos(id_correo),
-    CONSTRAINT fk_clientes_telefono FOREIGN KEY(id_telefono) REFERENCES telefonos(id_telefono),
-
-
+    CONSTRAINT pk_estado PRIMARY KEY(id),
 
 )ENGINE=InnoDB;
 
-CREATE TABLE paquetes(
+#*********** /Tabla Paises ***********#
 
-    id_paquete      int(255) auto_increment not null,
-    id_devolucion   int(255) not null,
-    id_cliente      int(255) not null,
-    fecha_envio     date not null,
-    contenido       varchar(255) not null,
-    peso            float(100, 2) not null,
-    dia_alta        date not null,
-    precio_envio    float(100, 2) not null,
-    observaciones   varchar(255),
-    fecha_entrega   date not null,
-    hora_entrega    time
 
-    CONSTRAINT pk_id_paquete PRIMARY KEY(id_paquete),
-
-    CONSTRAINT fk_cliente_paquete FOREIGN KEY(id_cliente) REFERENCES clientes(id_cliente),
-    CONSTRAINT fk_devolucion_paquete FOREIGN KEY(id_devolucion) REFERENCES devoluciones(id_paquete)
-    
-)ENGINE=InnoDB;
-
-CREATE TABLE empleados(
-
-    id_empleado         int(255) auto_increment not null,
-    id_correo           int(255) not null,
-    id_telefono         int(255) not null,
-    id_estado           int(255) not null,          
-    id_ciudad           int(255) not null,
-    id_colonia          int(255) not null,
-    nombre              varchar(255) not null,
-    paterno             varchar(255) not null,
-    materno             varchar(255),
-    genero              varchar(10) not null,
-    edad                int(3) not null,
-    rfc                 varchar(13) not null,
-    curp                varchar(18) not null,
-    domicilio           varchar(255) not null,
-
-    CONSTRAINT  pk_empleado PRIMARY KEY(id_empleado),
-
-    CONSTRAINT  fk_correo_empleado FOREIGN KEY(id_correo) REFERENCES correos(id_correo),
-    CONSTRAINT  fk_telefono_empleado FOREIGN KEY(id_telefono) REFERENCES telefonos(id_telefono),
-    CONSTRAINT  fk_estado_empleado FOREIGN KEY(id_estado) REFERENCES estados(id_estado),
-    CONSTRAINT  fk_ciudad_empleado FOREIGN KEY(id_ciudad) REFERENCES ciudades(id_ciudad),
-    CONSTRAINT  fk_colonias_empleado FOREIGN KEY(id_colonia) REFERENCES colonias(id_colonia),
-
-)ENGINE=InnoDB;
-
-# para que la tabla colonia si tenemos un campo domicilio??
-
-CREATE TABLE devoluciones(
-
-    id_paquete          int(255) auto_increment not null,
-    id_empleado         int(255) not null,
-    fecha_devolucion    date not null,
-    motivo_devolucion   varchar(255),
-
-    CONSTRAINT pk_paquete PRIMARY KEY(id_paquete),
-    CONSTRAINT fk_empleado_devolucion FOREIGN KEY(id_empleado) REFERENCES empleados(id_empleado)
-
-)ENGINE=InnoDB;
-
-# porque relacionado con empleado si la devolucion la hace el cliente
-
-CREATE TABLE telefonos(
-
-    id_telefono         int(255) auto_increment not null,
-    telefonos           int(10) not null,
-
-    CONSTRAINT pk_telefono PRIMARY KEY(id_telefono)
-
-)ENGINE=InnoDB;
-
-# porque telefonos no puede ir en la tabla de empleados y clientes?
+#*********** Tabla Estados ***********#
 
 CREATE TABLE estados(
 
-    id_estado       int(255) auto_increment not null,
+    id              int(255) auto_increment not null,
+    idPais          int(255) not null,
     nombre          varchar(255) not null,
 
-    CONSTRAINT pk_estado PRIMARY KEY(id_estado),
+    CONSTRAINT pk_estado PRIMARY KEY(id),
+
+    CONSTRAINT fk_estados_paises FOREIGN KEY(idPais) REFERENCES paises(id),
 
 )ENGINE=InnoDB;
+
+#*********** /Tabla Estados ***********#
+
+
+#*********** Tabla Ciudades ***********#
 
 CREATE TABLE ciudades(
 
-    id_ciudad       int(255) auto_increment not null,
-    id_estado       int(255) not null,
+    id              int(255) auto_increment not null,
+    idEstado        int(255) not null,
+    idPais          int(255) not null,
     nombre          varchar(255) not null,
 
-    CONSTRAINT pk_ciudad PRIMARY KEY(id_ciudad),
-    CONSTRAINT fk_estados_ciudades FOREIGN KEY(id_estado) REFERENCES estados(id_estado)
+    CONSTRAINT pk_ciudad PRIMARY KEY(id),
+
+    CONSTRAINT fk_ciudades_estados FOREIGN KEY(idEstado) REFERENCES estados(id),
+    CONSTRAINT fk_ciudades_paises FOREIGN KEY(idPais) REFERENCES paises(id)
 
 )ENGINE=InnoDB;
+
+#*********** /Tabla Ciudades ***********#
+
+
+#*********** Tabla Colonias ***********#
 
 CREATE TABLE colonias(
 
-    id_colonia          int(255) auto_increment not null,
-    id_ciudad           int(255) not null,
+    id                  int(255) auto_increment not null,
+    idCiudad            int(255) not null,
+    idEstado            int(255) not null,
+    idPais              int(255) not null,
     nombre              varchar(255) not null,
 
-    CONSTRAINT pk_colonia PRIMARY KEY(id_colonia),
-    CONSTRAINT fk_estados_ciudades FOREIGN KEY(id_ciudad) REFERENCES ciudades(id_ciudad)
+    CONSTRAINT pk_colonia PRIMARY KEY(id),
+
+    CONSTRAINT fk_colonias_ciudades FOREIGN KEY(idCiudad) REFERENCES ciudades(id),
+    CONSTRAINT fk_colonias_estados FOREIGN KEY(idEstado) REFERENCES estados(id),
+    CONSTRAINT fk_colonias_paises FOREIGN KEY(idPais) REFERENCES paises(id)
 
 )ENGINE=InnoDB;
+
+#*********** /Tabla Colonias ***********#
+
+
+#*********** Tabla Clientes ***********#
+
+CREATE TABLE clientes(
+
+    id              int(255) auto_increment not null,
+    idPais          int(255) not null,  
+    idEstado        int(255) not null,     
+    idCiudad        int(255) not null,
+    idColonia       int(255) not null,
+    nombre          varchar(255) not null,
+    paterno         varchar(255) not null,
+    materno         varchar(255),
+    edad            int(3) not null,
+    rfc             varchar(13) not null,
+    curp            varchar(18) not null,
+    genero          varchar(10) not null,
+    email           varchar(255) not null,
+    telefono        int(10) not null,
+    domicilio       varchar(255) not null,
+    
+    CONSTRAINT pk_id_cliente PRIMARY KEY(id),
+
+    CONSTRAINT uq_rfc UNIQUE(rfc),
+    CONSTRAINT uq_curp UNIQUE(curp),
+    CONSTRAINT uq_email UNIQUE(email),
+
+    CONSTRAINT ck_genero CHECK(genero = 'MASCULINO' OR genero = 'FEMENINO'),
+
+    CONSTRAINT fk_clientes_paises FOREIGN KEY(idPais) REFERENCES paises(id),
+    CONSTRAINT fk_clientes_estados FOREIGN KEY(idEstado) REFERENCES estados(id),
+    CONSTRAINT fk_clientes_ciudades FOREIGN KEY(idCiudad) REFERENCES ciudades(id),
+    CONSTRAINT fk_clientes_colonias FOREIGN KEY(idColonia) REFERENCES colonias(id)
+
+)ENGINE=InnoDB;
+ 
+#*********** /Tabla Clientes ***********#
+
+
+#*********** Tabla Empleados ***********#
+
+CREATE TABLE empleados(
+
+    id                  int(255) auto_increment not null,
+    idPais              int(255) not null,  
+    idEstado            int(255) not null,     
+    idCiudad            int(255) not null,
+    idColonia           int(255) not null,
+    nombre              varchar(255) not null,
+    paterno             varchar(255) not null,
+    materno             varchar(255),
+    rfc                 varchar(13) not null,
+    curp                varchar(18) not null,
+    genero              varchar(10) not null,
+    email               varchar(255) not null,
+    telefono            int(10) not null,
+    domicilio           varchar(255) not null,
+    rol                 int(1) not null
+
+    CONSTRAINT  pk_empleado PRIMARY KEY(id),
+
+    CONSTRAINT uq_rfc UNIQUE(rfc),
+    CONSTRAINT uq_curp UNIQUE(curp),
+    CONSTRAINT uq_email UNIQUE(email),
+
+    CONSTRAINT ck_role CHECK(rol = 1 OR rol = 0),
+
+    CONSTRAINT fk_empleados_paises FOREIGN KEY(idPais) REFERENCES paises(id),
+    CONSTRAINT fk_empleados_estados FOREIGN KEY(idEstado) REFERENCES estados(id),
+    CONSTRAINT fk_empleados_ciudades FOREIGN KEY(idCiudad) REFERENCES ciudades(id),
+    CONSTRAINT fk_empleados_colonias FOREIGN KEY(idColonia) REFERENCES colonias(id),
+
+)ENGINE=InnoDB;
+
+#*********** /Tabla Empleados ***********#
+
+
+#*********** Tabla Paquetes ***********#
+
+CREATE TABLE paquetes(
+
+    id                  int(255) auto_increment not null,
+    idCliente           int(255) not null,
+    idEmpleado          int(255) not null,
+    fechaEnvio          date not null,
+    contenido           varchar(255) not null,
+    peso                float(100, 2) not null,
+    diaAlta             date not null,
+    precioEnvio         float(100, 2) not null,
+    observaciones       varchar(255),
+    fechaEntrega        date not null,
+    horaEntrega         time,
+
+    CONSTRAINT pk_id_paquete PRIMARY KEY(id),
+
+    CONSTRAINT fk_paquete_cliente FOREIGN KEY(idCliente) REFERENCES clientes(id),
+    CONSTRAINT fk_paquete_empleado FOREIGN KEY(idEmpleado) REFERENCES empleados(id)
+    
+)ENGINE=InnoDB;
+
+#*********** /Tabla Paquetes ***********#
+
+
+#*********** Tabla Devoluciones ***********#
+
+CREATE TABLE devoluciones(
+
+    id                  int(255) auto_increment not null,
+    idPaquete           int(255) not null,
+    fechaDevolucion     date not null,
+    motivoDevolucion    varchar(255) not null,
+
+    CONSTRAINT pk_paquete PRIMARY KEY(id),
+
+    CONSTRAINT fk_devolucion_paquete FOREIGN KEY(idPaquete) REFERENCES paquetes(id)
+
+)ENGINE=InnoDB;
+
+#*********** /Tabla Devoluciones ***********#
