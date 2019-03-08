@@ -1,95 +1,115 @@
 #***** Paises *****#
 
-INSERT INTO paises VALUES(null, 1, 1, 1, 'mexico');
-INSERT INTO paises VALUES(1, 2, 3, 2, 'mexico');
-INSERT INTO paises VALUES(null, 3, 2, 6, 'panama');
+INSERT INTO paises VALUES(null, 'MEXICO');
+INSERT INTO paises VALUES(null, 'COLOMBIA');
 
-#***** Paises *****#
+#***** /Paises *****#
 
 
-#***** Insert Estados *****#
+#***** Estados *****#
 
-INSERT INTO estados VALUES(null, 1, 1, 'coahuila');
-INSERT INTO estados VALUES(1, 2, 2, 'coahuila');
+INSERT INTO estados VALUES(1, null, 'COAHUILA');
+INSERT INTO estados VALUES(1, null, 'SINALOA');
 
-INSERT INTO estados VALUES(null, 3, 3, 'nuevo leon');
-INSERT INTO estados VALUES(2, 4, 4, 'nuevo leon');
+INSERT INTO estados VALUES(2, null, 'ANTLOQUIA');
+INSERT INTO estados VALUES(2, null, 'SANTANDER');
 
-INSERT INTO estados VALUES(null, 5, 5, 'jalisco');
-INSERT INTO estados VALUES(3, 6, 6, 'jalisco');
-
-#***** /Insert Estados *****#
+#***** /Estados *****#
 
 
 #****** Ciudades ******#
 
-# ciudad saltillo (colonia satelite)
-INSERT INTO ciudades VALUES(null, 1, 'saltillo');
-# ciudad saltillo (colonia universidad)
-INSERT INTO ciudades VALUES(1, 2, 'saltillo');
+# pais MEXICO, estado COAHUILA
+INSERT INTO ciudades VALUES(1, 1, null, 'SALTILLO');
+INSERT INTO ciudades VALUES(1, 1, null, 'MONCLOVA');
 
-INSERT INTO ciudades VALUES(null, 2, 'monclova');
-INSERT INTO ciudades VALUES(2, 2, 'monclova');
+# pais MEXICO, estado SINALOA
+INSERT INTO ciudades VALUES(1, 2, null, 'CULIACAN');
+INSERT INTO ciudades VALUES(1, 2, null, 'MAZATLAN');
 
-INSERT INTO ciudades VALUES(null, 3, 'monterrey');
-INSERT INTO ciudades VALUES(null, 4, 'san pedro');
+# pais colombia, estado ANTLOQUIA
+INSERT INTO ciudades VALUES(2, 3, null, 'MEDELLIN');
+INSERT INTO ciudades VALUES(2, 3, null, 'ZARAGOZA');
 
-INSERT INTO ciudades VALUES(null, 5, 'guadalajara');
-INSERT INTO ciudades VALUES(null, 6, 'tlaquepaque');
+# pais colombia, estado SANTANDER
+INSERT INTO ciudades VALUES(2, 4, null, 'SOCORRO');
+INSERT INTO ciudades VALUES(2, 4, null, 'OIBA');
 
 #****** /Ciudades ******#
 
 
 #****** Colonias ******#
 
-# colonias saltillo (coahuila, méxico) #
-INSERT INTO colonias VALUES(null, 'zapaliname');
-INSERT INTO colonias VALUES(null, 'guayulera');
 
-# colonias monclova (coahuila, méxico) #
-INSERT INTO colonias VALUES(null, 'satelite');
-INSERT INTO colonias VALUES(null, 'universidad');
+## pais MEXICO, estado COAHUILA ##
 
-# colonias monterrey (nuevo leon, méxico) #
-INSERT INTO colonias VALUES(null, 'salvadores');
-INSERT INTO colonias VALUES(null, 'guerrero');
+# SALTILLO
+INSERT INTO colonias VALUES(1, 1, 1, null, 'ZAPALINAME');
+INSERT INTO colonias VALUES(1, 1, 1, null, 'GUAYULERA');
 
-# colonias san pedro (nuevo leon, méxico) #
-INSERT INTO colonias VALUES(null, 'salvadores');
-INSERT INTO colonias VALUES(null, 'guerrero');
+# MONCLOVA
+INSERT INTO colonias VALUES(1, 1, 2, null, 'GUERRERO');
+INSERT INTO colonias VALUES(1, 1, 2, null, 'DEL RIO');
 
-# colonias richmond (virginia, EUA) #
-INSERT INTO colonias VALUES(null, 'connecticut');
-INSERT INTO colonias VALUES(null, 'delaware');
 
-# colonias san antonio(texas, EUA) #
-INSERT INTO colonias VALUES(null, 'mayflower');
-INSERT INTO colonias VALUES(null, 'netherland');
+## pais MEXICO, estado SINALOA ##
+
+# CULICAN
+INSERT INTO colonias VALUES(1, 2, 3, null, 'SALVADORES');
+INSERT INTO colonias VALUES(1, 2, 3, null, 'URDIÑOLA');
+
+# MAZATLAN
+INSERT INTO colonias VALUES(1, 2, 4, null, 'MAREA');
+INSERT INTO colonias VALUES(1, 2, 4, null, 'FRUTOS');
+
+
+## pais COLOMBIA, estado ANTLOQUIA ##
+
+# MEDELLIN
+INSERT INTO colonias VALUES(2, 3, 5, null, 'GRANADOS');
+INSERT INTO colonias VALUES(2, 3, 5, null, 'ESCOBAR');
+
+# ZARAGOZA
+INSERT INTO colonias VALUES(2, 3, 6, null, 'HEROICOS');
+INSERT INTO colonias VALUES(2, 3, 6, null, 'CENTRICA');
+
+
+## pais COLOMBIA, estado SANTANDER ##
+
+# SOCORRO
+INSERT INTO colonias VALUES(2, 4, 7, null, 'LIBRADORES');
+INSERT INTO colonias VALUES(2, 4, 7, null, 'VALLE VERDE');
+
+# OIBA
+INSERT INTO colonias VALUES(2, 4, 8, null, 'ARBOLEDAS');
+INSERT INTO colonias VALUES(2, 4, 8, null, 'PARAISO');
+
 
 #****** /Colonias ******#
 
 
-## Insert Clientes ##
+#****** Clientes ******#
 
-INSERT INTO clientes VALUES(null, 1, 1, 1, 1, 'juan', 'vargas', 'fraire', 55, 'VAFJ980207LQ6', 'VAFJ320907HCLRRN05', 'MASCULINO', 'juan@hotmail.com', 8441302933, 'nadadores #342');
-INSERT INTO clientes VALUES(null, 1, 2, 2, 2, 'oziel', 'lopez', 'arredondo', 55, 'LOAO350808D70', 'LOAO350808HNLPRZ00', 'MASCULINO', 'oziel@hotmail.com', 8443303923, 'bustamante #232');
-INSERT INTO clientes VALUES(null, 1, 3, 5, 6, 'javier', 'rodriguez', 'balderas', 55, 'ROBJ820708EGA', 'ROBJ820708HNLDLV04', 'MASCULINO', 'javiersito@hotmail.com', 8663245444, 'mexicali #232');
+INSERT INTO clientes VALUES(1, null, 'JUAN', 'VARGAS', 'FRAIRE', 55, 'VAFJ980207LQ6', 'VAFJ320907HCLRRN05', 'MASCULINO', 'juan@hotmail.com', 8441302933, 'nadadores #342');
+INSERT INTO clientes VALUES(2, null, 'OZIEL', 'LOPEZ', 'ARREDONDO', 20, 'LOAO350808D70', 'LOAO350808HNLPRZ00', 'MASCULINO', 'oziel@hotmail.com', 8443303923, 'bustamante #232');
+INSERT INTO clientes VALUES(3, null, 'JAVIER', 'RODRIGUEZ', 'BALDERAS', 35, 'ROBJ820708EGA', 'ROBJ820708HNLDLV04', 'MASCULINO', 'javiersito@hotmail.com', 8663245444, 'mexicali #232');
 
-## /Insert Clientes ##
-
-
-## Insert Empleados ##
-
-INSERT INTO empleados VALUES(null, 1, 1, 1, 1, 'roberto', 'campos', 'salazar', 'rfc', 'curp', 'MASCULINO', 'roberto@hotmail.com', 2552316538, 'percadores #233');
-INSERT INTO empleados VALUES(null, 1, 2, 2, 2, 'maria', 'perez', 'ocampo', 'rfc', 'curps', 'FEMENINO', 'maria123@hotmail.com', 4336549087, 'flamencos #238');
-INSERT INTO empleados VALUES(null, 2, 3, 3, 3, 'andrea', 'paredes', 'reyes', 'rfc', 'curp', 'FEMENINO', 'andiLove@hotmail.com', 8779785765, 'garibaldi #434');
-
-## Insert Empleados ##
+#****** /Clientes ******#
 
 
-## Insert Paquetes ##
+#****** Empleados ******#
 
-INSERT INTO paquetes VALUES(null, 1, 1, CURDATE(), 'mochila vans', 10.4, CURDATE(), 100, null, CURDATE() + 2, null);
-INSERT INTO paquetes VALUES(null, 2, 2, CURDATE(), 'camisa polo0', 200, CURDATE(), 200, null, CURDATE() + 4, null);
+INSERT INTO empleados VALUES(5, null, 'ROBERTO', 'CAMPOS', 'SALAZAR', 'CASR900502PD2', 'CASR900502HSLMLB01', 'MASCULINO', 'roberto@hotmail.com', 2552316538, 'percadores #233', 0);
+INSERT INTO empleados VALUES(6, null, 'MARIA', 'PEREZ', 'OCAMPO', 'PEOM250704676', 'PEOM250704MSLRCR07', 'FEMENINO', 'maria123@hotmail.com', 4336549087, 'flamencos #238', 1);
+INSERT INTO empleados VALUES(7, null, 'ANDREA', 'PAREDES', 'REYES', 'PARA2505049F7', 'PARA250504MSLRYN08', 'FEMENINO', 'andiLove@hotmail.com', 8779785765, 'garibaldi #434', 1);
 
-## Insert /Paquetes ##
+#****** /Empleados ******#
+
+
+#****** Paquetes ******#
+
+INSERT INTO paquetes VALUES(1, 1, null, CURDATE(), 'mochila vans', 10.4, CURDATE(), 100, null, CURDATE() + 2, null);
+INSERT INTO paquetes VALUES(2, 2, null, CURDATE(), 'camisa polo0', 200, CURDATE(), 200, null, CURDATE() + 4, null);
+INSERT INTO paquetes VALUES(3, 3, null, CURDATE(), 'camisa polo0', 200, CURDATE(), 200, null, CURDATE() + 4, null);
+
+#****** /Paquetes ******#
