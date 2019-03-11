@@ -81,7 +81,7 @@ CREATE TABLE clientes(
 
     idColonia       int(255) not null,
     idCliente       int(255) auto_increment not null,
-    nombreCliente   varchar(255) not null,
+    nombre          varchar(255) not null,
     paterno         varchar(255) not null,
     materno         varchar(255),
     edad            int(3) not null,
@@ -113,7 +113,7 @@ CREATE TABLE empleados(
 
     idColonia           int(255) not null,
     idEmpleado          int(255) auto_increment not null,
-    nombreEmpleado      varchar(255) not null,
+    nombre              varchar(255) not null,
     paterno             varchar(255) not null,
     materno             varchar(255),
     rfc                 varchar(13) not null,
