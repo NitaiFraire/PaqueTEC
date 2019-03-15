@@ -1,0 +1,216 @@
+
+/* Estilos generales */
+
+/* colores principales
+
+     color: #9c454c;
+     color: #27284d;
+     color: #ffa939;
+     color: #e8ddce;
+
+*/
+
+
+body {
+    font-family: 'Archivo Narrow', sans-serif;
+    background-color: #e8ddce;
+}
+
+
+
+.form-control:focus{
+
+    box-shadow: 0 0 0 .2rem #9c454c;
+    border-color: #9c454c;
+    
+}
+
+
+.btn-primary{
+    background-color: #9c454c!important;
+    border: #9c454c;
+}
+
+.btn-primary:hover{
+
+    background-color: #a1686d!important;
+}
+
+.bg-success{
+
+    background-color: #9c454c!important;
+}
+
+/* /Estilos generales */
+
+/* NavBar / Carousel */
+
+@media (min-width: 768px){
+
+    .barra.bg-success{
+
+        background-color: transparent!important;
+    }
+
+    .header{
+
+        position: relative;
+    }
+
+    .header .barra{
+
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+    }
+}
+
+.navbar-brand{
+
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.navbar-brand span{
+
+    font-weight: 900;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+}
+
+.dropdown-menu{
+
+    background-color: rgb(247, 177, 177);
+}
+
+.dropdown-menu .dropdown-item{
+
+    color: white;
+    text-transform: uppercase;
+}
+
+.dropdown-menu .dropdown-item:hover{
+
+    background-color: #9c454c;
+}
+
+.carousel-caption h1{
+
+    font-size: 3.4rem;
+    font-weight: 400;
+}
+
+.navbar-brand i{
+
+    color: #e8ddce;
+}
+
+.carousel img{
+    
+    height: 50vh;
+}
+
+@media (min-width: 768px){
+
+    .carousel img{
+    
+        height: 60vh;
+    }
+
+}
+
+.cc-segundo{
+
+    max-width: 600px;
+}
+
+.cc-segundo p{
+
+    font-size: 1.2rem;
+}
+
+
+.btn-warning a{
+
+    margin-right: 15px;
+}
+
+
+/* NavBar / Carousel */
+
+/* servicios */
+
+.servicios h1,
+.servicios h2{
+
+    color: #27284d;
+}
+
+.servicio i{
+
+    font-size: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: #ffa939;
+    /* color: #27284d; */
+}
+
+.servicio h2{
+
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size: 2.2rem;
+}
+
+.servicio p{
+
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 200;
+}
+
+/* /servicios */
+
+/* Footer */
+
+footer{
+
+    background-color: #9c454c;
+    color: #e8ddce;
+}
+
+
+.contacto h2{
+
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.contacto i{
+
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.contacto p{
+
+    font-size: 1rem;
+}
+
+
+.sociales i{
+
+    color: #e8ddce;
+    font-size: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* /Footer */
+
