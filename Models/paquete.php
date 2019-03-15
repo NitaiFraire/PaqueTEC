@@ -15,6 +15,7 @@ class Paquete{
     private $observaciones;
     private $fechaEntrega;
     private $horaEntrega;
+    
     private $db;
 
 
