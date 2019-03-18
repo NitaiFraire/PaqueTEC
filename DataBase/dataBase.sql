@@ -4,7 +4,7 @@ create DATABASE paqueteria;
 USE paqueteria;
 
 
-#*********** Tabla Paises ***********#
+#***********  Paises ***********#
 
 CREATE TABLE paises(
 
@@ -15,10 +15,10 @@ CREATE TABLE paises(
 
 )ENGINE=InnoDB;
 
-#*********** /Tabla Paises ***********#
+#***********  /Paises ***********#
 
 
-#*********** Tabla Estados ***********#
+#***********  Estados  ***********#
 
 CREATE TABLE estados(
 
@@ -32,10 +32,10 @@ CREATE TABLE estados(
 
 )ENGINE=InnoDB;
 
-#*********** /Tabla Estados ***********#
+#***********  /Estados  ***********#
 
 
-#*********** Tabla Ciudades ***********#
+#***********  Ciudades ***********#
 
 CREATE TABLE ciudades(
 
@@ -51,10 +51,10 @@ CREATE TABLE ciudades(
 
 )ENGINE=InnoDB;
 
-#*********** /Tabla Ciudades ***********#
+#***********  /Ciudades  ***********#
 
 
-#*********** Tabla Colonias ***********#
+#***********  Colonias  ***********#
 
 CREATE TABLE colonias(
 
@@ -72,10 +72,10 @@ CREATE TABLE colonias(
 
 )ENGINE=InnoDB;
 
-#*********** /Tabla Colonias ***********#
+#***********  /Colonias  ***********#
 
 
-#*********** Tabla Clientes ***********#
+#***********  Clientes  ***********#
 
 CREATE TABLE clientes(
 
@@ -104,10 +104,10 @@ CREATE TABLE clientes(
 
 )ENGINE=InnoDB;
  
-#*********** /Tabla Clientes ***********#
+#***********  /Clientes  ***********#
 
 
-#*********** Tabla Empleados ***********#
+#***********  Empleados  ***********#
 
 CREATE TABLE empleados(
 
@@ -120,9 +120,10 @@ CREATE TABLE empleados(
     curp                varchar(18) not null,
     genero              varchar(10) not null,
     email               varchar(255) not null,
+    password            varchar(255) not null
     telefono            int(10) not null,
     domicilio           varchar(255) not null,
-    rol                 int(1) not null
+    rol                 int(1)
 
     CONSTRAINT  pk_empleado PRIMARY KEY(idEmpleado),
 
@@ -130,16 +131,16 @@ CREATE TABLE empleados(
     CONSTRAINT uq_curp UNIQUE(curp),
     CONSTRAINT uq_email UNIQUE(email),
 
-    CONSTRAINT ck_role CHECK(rol = 1 OR rol = 0),
+    CONSTRAINT ck_role CHECK(rol = 0 OR rol = 1 OR rol = 2),
 
     CONSTRAINT fk_empleados_colonias FOREIGN KEY(idColonia) REFERENCES colonias(idColonia),
 
 )ENGINE=InnoDB;
 
-#*********** /Tabla Empleados ***********#
+#***********  /Empleados  ***********#
 
 
-#*********** Tabla Paquetes ***********#
+#***********  Paquetes  ***********#
 
 CREATE TABLE paquetes(
 
@@ -162,10 +163,10 @@ CREATE TABLE paquetes(
     
 )ENGINE=InnoDB;
 
-#*********** /Tabla Paquetes ***********#
+#***********  /Paquetes  ***********#
 
 
-#*********** Tabla Devoluciones ***********#
+#***********  Devoluciones  ***********#
 
 CREATE TABLE devoluciones(
 
@@ -180,4 +181,4 @@ CREATE TABLE devoluciones(
 
 )ENGINE=InnoDB;
 
-#*********** /Tabla Devoluciones ***********#
+#***********  /Devoluciones  ***********#

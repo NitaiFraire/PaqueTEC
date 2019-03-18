@@ -214,3 +214,11 @@ footer{
 
 /* /Footer */
 
+/* Modal */
+
+.modal-backdrop{
+
+    z-index: 0;
+}
+
+/* /Modal */

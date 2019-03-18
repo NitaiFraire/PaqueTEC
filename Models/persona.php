@@ -52,6 +52,7 @@ class Persona{
     }
 
     public function setMaterno($materno){
+        
         $this->materno = $materno;
     }
 
