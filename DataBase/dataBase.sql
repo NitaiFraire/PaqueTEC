@@ -1,4 +1,4 @@
-# Drop database paqueteria #
+# Drop database paqueteria; #
 
 create DATABASE paqueteria;
 USE paqueteria;
@@ -11,7 +11,7 @@ CREATE TABLE paises(
     idPais          int(255) auto_increment not null,
     nombrePais      varchar(255) not null,
 
-    CONSTRAINT pk_idPais PRIMARY KEY(idPais),
+    CONSTRAINT pk_idPais PRIMARY KEY(idPais)
 
 )ENGINE=InnoDB;
 
@@ -28,7 +28,7 @@ CREATE TABLE estados(
 
     CONSTRAINT pk_estado PRIMARY KEY(idEstado),
 
-    CONSTRAINT fk_estados_paises FOREIGN KEY(idPais) REFERENCES paises(idPais),
+    CONSTRAINT fk_estados_paises FOREIGN KEY(idPais) REFERENCES paises(idPais)
 
 )ENGINE=InnoDB;
 
@@ -46,8 +46,8 @@ CREATE TABLE ciudades(
 
     CONSTRAINT pk_ciudad PRIMARY KEY(idCiudad),
 
-    CONSTRAINT fk_ciudades_paises FOREIGN KEY(idPais) REFERENCES paises(idPais)
-    CONSTRAINT fk_ciudades_estados FOREIGN KEY(idEstado) REFERENCES estados(idPais),
+    CONSTRAINT fk_ciudades_paises FOREIGN KEY(idPais) REFERENCES paises(idPais),
+    CONSTRAINT fk_ciudades_estados FOREIGN KEY(idEstado) REFERENCES estados(idEstado)
 
 )ENGINE=InnoDB;
 
@@ -66,9 +66,9 @@ CREATE TABLE colonias(
 
     CONSTRAINT pk_colonia PRIMARY KEY(idColonia),
 
-    CONSTRAINT fk_colonias_paises FOREIGN KEY(idPais) REFERENCES paises(idPais)
+    CONSTRAINT fk_colonias_paises FOREIGN KEY(idPais) REFERENCES paises(idPais),
     CONSTRAINT fk_colonias_estados FOREIGN KEY(idEstado) REFERENCES estados(idEstado),
-    CONSTRAINT fk_colonias_ciudades FOREIGN KEY(idCiudad) REFERENCES ciudades(idCiudad),
+    CONSTRAINT fk_colonias_ciudades FOREIGN KEY(idCiudad) REFERENCES ciudades(idCiudad)
 
 )ENGINE=InnoDB;
 
@@ -116,14 +116,15 @@ CREATE TABLE empleados(
     nombre              varchar(255) not null,
     paterno             varchar(255) not null,
     materno             varchar(255),
+    edad                int(3) not null,
     rfc                 varchar(13) not null,
     curp                varchar(18) not null,
     genero              varchar(10) not null,
     email               varchar(255) not null,
-    password            varchar(255) not null
+    password            varchar(255) not null,
     telefono            int(10) not null,
     domicilio           varchar(255) not null,
-    rol                 int(1)
+    rol                 int(1),
 
     CONSTRAINT  pk_empleado PRIMARY KEY(idEmpleado),
 
@@ -131,9 +132,10 @@ CREATE TABLE empleados(
     CONSTRAINT uq_curp UNIQUE(curp),
     CONSTRAINT uq_email UNIQUE(email),
 
+    # 0 = gerente, 1 = planta, 2 = repartidor #
     CONSTRAINT ck_role CHECK(rol = 0 OR rol = 1 OR rol = 2),
 
-    CONSTRAINT fk_empleados_colonias FOREIGN KEY(idColonia) REFERENCES colonias(idColonia),
+    CONSTRAINT fk_empleados_colonias FOREIGN KEY(idColonia) REFERENCES colonias(idColonia)
 
 )ENGINE=InnoDB;
 
@@ -159,7 +161,7 @@ CREATE TABLE paquetes(
     CONSTRAINT pk_id_paquete PRIMARY KEY(idPaquete),
 
     CONSTRAINT fk_paquete_cliente FOREIGN KEY(idCliente) REFERENCES clientes(idCliente),
-    CONSTRAINT fk_paquete_empleado FOREIGN KEY(idEmpleado) REFERENCES empleados(idCliente)
+    CONSTRAINT fk_paquete_empleado FOREIGN KEY(idEmpleado) REFERENCES empleados(idEmpleado)
     
 )ENGINE=InnoDB;
 

@@ -42,7 +42,7 @@ class Persona{
 
     public function setNombre($nombre){
 
-        $this->nombre = $nombre;
+        $this->nombre = $this->db->real_escape_string($nombre);
     }
 
 
@@ -53,7 +53,7 @@ class Persona{
 
     public function setMaterno($materno){
         
-        $this->materno = $materno;
+        $this->materno = $this->db->real_escape_string($materno);
     }
 
 
@@ -64,7 +64,7 @@ class Persona{
 
     public function setPaterno($paterno){
 
-        $this->paterno = $paterno;
+        $this->paterno = $this->db->real_escape_string($paterno);
     }
 
 
@@ -122,7 +122,7 @@ class Persona{
 
     public function setEmail($email){
 
-        $this->email = $email;
+        $this->email = $this->db->real_escape_string($email);
     }
 
 
@@ -144,7 +144,7 @@ class Persona{
 
     public function setDomicilio($domicilio){
         
-        $this->domicilio = $domicilio;
+        $this->domicilio = $this->db->real_escape_string($domicilio);
     }
 }
 

@@ -17,6 +17,7 @@ class Colonia{
         $this->db = DataBase::connect();
     }
 
+    /* Métodos getter y setter */
 
     public function getIdPais(){
         
@@ -71,6 +72,21 @@ class Colonia{
         
         $this->nombreColonia = $nombreColonia;
     }
+
+    /* /Métodos getter y setter */
+
+    
+    /* Funciones de modelo */
+    
+    public function getColonias(){
+        
+        $sql = "SELECT * FROM colonias ORDER BY idColonia DESC";
+        $colonias = $this->db->query($sql);
+
+        return $colonias;
+    }
+
+    /* /Funciones de modelo */
 }
 
 ?>

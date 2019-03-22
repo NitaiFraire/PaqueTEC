@@ -1,6 +1,6 @@
 <?php
 
-require_once 'models/empleado.php';
+require_once 'Models/empleado.php';
 
 class EmpleadoController{
 
