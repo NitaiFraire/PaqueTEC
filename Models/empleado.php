@@ -11,8 +11,10 @@ class Empleado extends Persona{
     public function __construct(){
 
         parent::__construct();
+        
     }
 
+    /* /Métodos getter y setter */
 
     public function getIdEmpleado(){
         
@@ -49,33 +51,42 @@ class Empleado extends Persona{
         $this->password = $password;
     }
 
+    /* /Métodos getter y setter */
+
+
+    /* Funciones de modelo */
+    
     public function register(){
         
-        $sql = "INSERT INTO empleados VALUES(null,
+        $sql = "INSERT INTO empleados VALUES({$this->getIdColonia()},
+                                              null,
                                              '{$this->getNombre()}',
-                                             '{$this->getMaterno()}',
                                              '{$this->getPaterno()}',
+                                             '{$this->getMaterno()}',
                                              '{$this->getEdad()}',
                                              '{$this->getRfc()}',
                                              '{$this->getCurp()}',
-                                             '{$this->getGenero}',
+                                             '{$this->getGenero()}',
                                              '{$this->getEmail()}',
                                              '{$this->getPassword()}',
                                               {$this->getTelefono()},
                                              '{$this->getDomicilio()}',
-                                              1);";
+                                             1);";
+
 
         $save = $this->db->query($sql);
 
         $result = false;
-
+            
         if($save){
 
             $result = true;
         }
 
-        return resutl;
+        return $result;
     }
+
+    /* /funciones de modelo */
 }
 
 ?>

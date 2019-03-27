@@ -1,7 +1,7 @@
 <?php
 
     define('baseUrl', 'http://localhost/Actividades/Paqueteria/');
-    define('controllerDefault', 'InicioController');
+    define('controllerDefault', 'EmpleadoController');
     define('actionDefault', 'index');
 
 ?>

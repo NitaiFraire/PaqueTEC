@@ -16,7 +16,7 @@ class Persona{
     private $telefono;
     private $domicilio;
     
-    private $db;
+    protected $db;
 
     public function __construct(){
         
@@ -53,7 +53,7 @@ class Persona{
 
     public function setMaterno($materno){
         
-        $this->materno = $this->db->real_escape_string($materno);
+        $this->materno = $materno;
     }
 
 
@@ -88,7 +88,7 @@ class Persona{
 
     public function setRfc($rfc){
 
-        $this->rfc = $rfc;
+        $this->rfc = $this->db->real_escape_string($rfc);
     }
 
 
@@ -99,7 +99,7 @@ class Persona{
 
     public function setCurp($curp){
 
-        $this->curp = $curp;
+        $this->curp = $this->db->real_escape_string($curp);
     }
 
 
@@ -136,11 +136,11 @@ class Persona{
         $this->telefono = $telefono;
     }
 
-
     public function getDomicilio(){
 
         return $this->domicilio;
     }
+
 
     public function setDomicilio($domicilio){
         

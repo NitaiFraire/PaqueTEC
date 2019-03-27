@@ -103,6 +103,9 @@ INSERT INTO empleados VALUES(4, null, 'ROBERTO', 'CAMPOS', 'SALAZAR', 30, 'CASR9
 INSERT INTO empleados VALUES(5, null, 'MARIA', 'PEREZ', 'OCAMPO', 44, 'PEOM250704676', 'PEOM250704MSLRCR07', 'FEMENINO', 'maria123@hotmail.com', 'passworddd', 4336549087, 'flamencos #238', 1);
 INSERT INTO empleados VALUES(6, null, 'ANDREA', 'PAREDES', 'REYES', 53, 'PARA2505049F7', 'PARA250504MSLRYN08', 'FEMENINO', 'andiLove@hotmail.com', '43214321432', 8779785765, 'garibaldi #434', 2);
 
+
+INSERT INTO empleados VALUES(6, null, 'DANIEL', 'CARMONA', 'PAREDES', 23, 'CAPD9507076K5', 'CAPD950707HSLRRN00', 'MASCULINO', 'DanMagg@hotmail.com', '4556458702', 4556458702, 'aguas negras #100', 2);
+
 #****** /Empleados ******#
 
 

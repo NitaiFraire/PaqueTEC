@@ -13,7 +13,7 @@
 
     }else{
 
-        require_once 'Views/index.php';
+        require_once 'Views/usuario/index.php';
     }
     
     
