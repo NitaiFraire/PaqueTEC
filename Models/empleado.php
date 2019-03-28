@@ -59,6 +59,9 @@ class Empleado extends Persona{
     public function register(){
         
         $sql = "INSERT INTO empleados VALUES({$this->getIdColonia()},
+                                             '{$this->getIdCiudad()}',
+                                             '{$this->getIdEstado()}',
+                                             '{$this->getIdPais()}',
                                               null,
                                              '{$this->getNombre()}',
                                              '{$this->getPaterno()}',
