@@ -86,6 +86,41 @@ class Empleado extends Persona{
         return $result;
     }
 
+    public function login(){
+
+        $result = false;
+        
+        $email = $this->email;
+        $password = $this->password;
+
+        $sql = "SELECT * FROM empleados WHERE email = '$email'";
+
+        $login = $this->db->query($sql);
+
+        if($login && $login->num_rows == 1){
+
+            $empleado = $login->fetch_object();
+
+            $verify = password_verify($password, $empleado->password);
+
+            if($verify){
+
+                $result = $empleado;
+            }
+        }
+
+        return $result;
+    }
+
+    public function getEmpleados(){
+
+        $sql = "SELECT * FROM empleados ORDER BY idEmpleado DESC";
+
+        $empleados = $this->db->query($sql);
+
+        return $empleados;
+    }
+
     /* /funciones de modelo */
 }
 
