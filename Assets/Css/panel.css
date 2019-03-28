@@ -4,6 +4,22 @@ body{
     font-family: 'Archivo Narrow', sans-serif;
     height: 100vh;
 }
+
+.btn-primary{
+  background-color: #9c454c!important;
+  border: #9c454c;
+}
+
+.btn-primary:hover{
+
+  background-color: #a1686d!important;
+}
+
+.bg-success{
+
+  background-color: #9c454c!important;
+}
+
 .centrado {
     text-align: center; }
   

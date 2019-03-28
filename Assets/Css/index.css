@@ -10,12 +10,16 @@
 
 */
 
+html{
+
+    height: 100%;
+}
+
 
 body {
     font-family: 'Archivo Narrow', sans-serif;
     background-color: #e8ddce;
 }
-
 
 
 .form-control:focus{
@@ -222,3 +226,44 @@ footer{
 }
 
 /* /Modal */
+
+/* formRegister */
+
+.formContainer{
+
+    background-image: url(../Images/formBack.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formIndex{
+    
+    background-color: white;
+    border-radius: 20px;
+    opacity: 0.8;
+    
+}
+
+.formIndex label{
+
+    font-size: 1.3rem;
+}
+
+
+/* /formRegister */
+
+/* formLogIn */
+
+.contenido{
+
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+.logIn{
+
+    background-image: url(../Images/formBack2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* /formLogIn */
