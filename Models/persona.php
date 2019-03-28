@@ -4,6 +4,9 @@ class Persona{
 
     // Foreign keys
     protected $idColonia;
+    protected $idCiudad;
+    protected $idEstado;
+    protected $idPais;
 
     protected $nombre;
     protected $materno;
@@ -145,6 +148,40 @@ class Persona{
     public function setDomicilio($domicilio){
         
         $this->domicilio = $this->db->real_escape_string($domicilio);
+    }
+
+
+
+    public function getIdCiudad(){
+        
+        return $this->idCiudad;
+    }
+
+    public function setIdCiudad($idCiudad){
+        
+        $this->idCiudad = $idCiudad;
+    }
+
+
+    public function getIdEstado(){
+
+        return $this->idEstado;
+    }
+
+    public function setIdEstado($idEstado){
+
+        $this->idEstado = $idEstado;
+    }
+
+
+    public function getIdPais(){
+
+        return $this->idPais;
+    }
+
+    public function setIdPais($idPais){
+
+        $this->idPais = $idPais;
     }
 }
 
