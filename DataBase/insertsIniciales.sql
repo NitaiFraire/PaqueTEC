@@ -90,18 +90,20 @@ INSERT INTO colonias VALUES(2, 4, 8, null, 'PARAISO');
 
 #****** Clientes ******#
 
-INSERT INTO clientes VALUES(1, null, 'JUAN', 'VARGAS', 'FRAIRE', 55, 'VAFJ980207LQ6', 'VAFJ320907HCLRRN05', 'MASCULINO', 'juan@hotmail.com', 8441302933, 'nadadores #342');
-INSERT INTO clientes VALUES(2, null, 'OZIEL', 'LOPEZ', 'ARREDONDO', 20, 'LOAO350808D70', 'LOAO350808HNLPRZ00', 'MASCULINO', 'oziel@hotmail.com', 8443303923, 'bustamante #232');
-INSERT INTO clientes VALUES(3, null, 'JAVIER', 'RODRIGUEZ', 'BALDERAS', 35, 'ROBJ820708EGA', 'ROBJ820708HNLDLV04', 'MASCULINO', 'javiersito@hotmail.com', 8663245444, 'mexicali #232');
+INSERT INTO clientes VALUES(1, 1, 1, 1, null, 'JUAN', 'VARGAS', 'FRAIRE', 55, 'VAFJ980207LQ6', 'VAFJ320907HCLRRN05', 'MASCULINO', 'juan@hotmail.com', 8441302933, 'nadadores #342');
+INSERT INTO clientes VALUES(5, 3, 2, 1, null, 'OZIEL', 'LOPEZ', 'ARREDONDO', 20, 'LOAO350808D70', 'LOAO350808HNLPRZ00', 'MASCULINO', 'oziel@hotmail.com', 8443303923, 'bustamante #232');
+INSERT INTO clientes VALUES(9, 5, 3, 2, null, 'JAVIER', 'RODRIGUEZ', 'BALDERAS', 35, 'ROBJ820708EGA', 'ROBJ820708HNLDLV04', 'MASCULINO', 'javiersito@hotmail.com', 8663245444, 'mexicali #232');
+
+INSERT INTO clientes VALUES(9, 5, 3, 2, null, 'JAVIER', 'RODRIGUEZ', 'BALDERAS', 35, 'RFBJ820708EGA', 'RFBJ820708HNLDLV04', 'MASCULINO', 'javiersfito@hotmail.com', 8663245444, 'mexicali #232');
 
 #****** /Clientes ******#
 
 
 #****** Empleados ******#
 
-INSERT INTO empleados VALUES(4, null, 'ROBERTO', 'CAMPOS', 'SALAZAR', 30, 'CASR900502PD2', 'CASR900502HSLMLB01', 'MASCULINO', 'roberto@hotmail.com', '12345678', 2552316538, 'percadores #233', 0);
-INSERT INTO empleados VALUES(5, null, 'MARIA', 'PEREZ', 'OCAMPO', 44, 'PEOM250704676', 'PEOM250704MSLRCR07', 'FEMENINO', 'maria123@hotmail.com', 'passworddd', 4336549087, 'flamencos #238', 1);
-INSERT INTO empleados VALUES(6, null, 'ANDREA', 'PAREDES', 'REYES', 53, 'PARA2505049F7', 'PARA250504MSLRYN08', 'FEMENINO', 'andiLove@hotmail.com', '43214321432', 8779785765, 'garibaldi #434', 2);
+INSERT INTO empleados VALUES(1, 1, 1, 1, null, 'ROBERTO', 'CAMPOS', 'SALAZAR', 30, 'CASR900502PD2', 'CASR900502HSLMLB01', 'MASCULINO', 'roberto@hotmail.com', '12345678', 2552316538, 'percadores #233', 0);
+INSERT INTO empleados VALUES(5, 3, 2, 1, null, 'MARIA', 'PEREZ', 'OCAMPO', 44, 'PEOM250704676', 'PEOM250704MSLRCR07', 'FEMENINO', 'maria123@hotmail.com', 'passworddd', 4336549087, 'flamencos #238', 1);
+INSERT INTO empleados VALUES(9, 5, 3, 2, null, 'ANDREA', 'PAREDES', 'REYES', 53, 'PARA2505049F7', 'PARA250504MSLRYN08', 'FEMENINO', 'andiLove@hotmail.com', '43214321432', 8779785765, 'garibaldi #434', 2);
 
 #****** /Empleados ******#
 

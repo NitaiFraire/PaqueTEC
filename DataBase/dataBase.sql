@@ -80,6 +80,9 @@ CREATE TABLE colonias(
 CREATE TABLE clientes(
 
     idColonia       int(255) not null,
+    idCiudad        int(255) not null,
+    idEstado        int(255) not null,
+    idPais          int(255) not null,
     idCliente       int(255) auto_increment not null,
     nombre          varchar(255) not null,
     paterno         varchar(255) not null,
@@ -97,10 +100,14 @@ CREATE TABLE clientes(
     CONSTRAINT uq_rfc UNIQUE(rfc),
     CONSTRAINT uq_curp UNIQUE(curp),
     CONSTRAINT uq_email UNIQUE(email),
+    CONSTRAINT uq_telefono UNIQUE(telefono),
 
     CONSTRAINT ck_genero CHECK(genero = 'MASCULINO' OR genero = 'FEMENINO'),
 
-    CONSTRAINT fk_clientes_colonias FOREIGN KEY(idColonia) REFERENCES colonias(idColonia)
+    CONSTRAINT fk_clientes_colonias FOREIGN KEY(idColonia) REFERENCES colonias(idColonia),
+    CONSTRAINT fk_clientes_ciudades FOREIGN KEY(idCiudad) REFERENCES ciudades(idCiudad),
+    CONSTRAINT fk_clientes_estados FOREIGN KEY(idEstado) REFERENCES estados(idEstado),
+    CONSTRAINT fk_clientes_paises FOREIGN KEY(idPais) REFERENCES paises(idPais)
 
 )ENGINE=InnoDB;
  
@@ -112,6 +119,9 @@ CREATE TABLE clientes(
 CREATE TABLE empleados(
 
     idColonia           int(255) not null,
+    idCiudad            int(255) not null,
+    idEstado            int(255) not null,
+    idPais              int(255) not null,
     idEmpleado          int(255) auto_increment not null,
     nombre              varchar(255) not null,
     paterno             varchar(255) not null,
@@ -131,12 +141,16 @@ CREATE TABLE empleados(
     CONSTRAINT uq_rfc UNIQUE(rfc),
     CONSTRAINT uq_curp UNIQUE(curp),
     CONSTRAINT uq_email UNIQUE(email),
+    CONSTRAINT uq_telefono UNIQUE(telefono),
 
     # 0 = gerente, 1 = planta, 2 = repartidor #
     CONSTRAINT ck_role CHECK(rol = 0 OR rol = 1 OR rol = 2),
 
-    CONSTRAINT fk_empleados_colonias FOREIGN KEY(idColonia) REFERENCES colonias(idColonia)
-
+    CONSTRAINT fk_empleados_colonias FOREIGN KEY(idColonia) REFERENCES colonias(idColonia),
+    CONSTRAINT fk_empleados_ciudades FOREIGN KEY(idCiudad) REFERENCES ciudades(idCiudad),
+    CONSTRAINT fk_empleados_estados FOREIGN KEY(idEstado) REFERENCES estados(idEstado),
+    CONSTRAINT fk_empleados_paises FOREIGN KEY(idPais) REFERENCES paises(idPais)
+    
 )ENGINE=InnoDB;
 
 #***********  /Empleados  ***********#
