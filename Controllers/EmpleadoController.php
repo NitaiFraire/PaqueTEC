@@ -32,15 +32,18 @@ class EmpleadoController{
             $edad = isset($_POST['edad']) ? $_POST['edad'] : false;
             $genero = isset($_POST['genero']) ? $_POST['genero'] : false;
             $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : false;
-            $colonia = isset($_POST['colonia']) ? $_POST['colonia'] : false;
             $domicilio = isset($_POST['domicilio']) ? $_POST['domicilio'] : false;
             $rfc = isset($_POST['rfc']) ? $_POST['rfc'] : false;
             $curp = isset($_POST['curp']) ? $_POST['curp'] : false;
+            $colonia = isset($_POST['colonia']) ? $_POST['colonia'] : false;
+            $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : false;
+            $ciudad = isset($_POST['estado']) ? $_POST['estado'] : false;
+            $ciudad = isset($_POST['pais']) ? $_POST['pais'] : false;
 
             if($nombre && $materno && $paterno
                 && $email && $password && $edad 
                 && $genero && $telefono && $colonia && $domicilio
-                && $rfc && $curp){
+                && $rfc && $curp && $ciudad && $estado && $pais){
 
                
                 $empleado = new Empleado();
@@ -53,10 +56,13 @@ class EmpleadoController{
                 $empleado->setEdad($edad);
                 $empleado->setGenero($genero);
                 $empleado->setTelefono($telefono);
-                $empleado->setIdColonia($colonia);
                 $empleado->setDomicilio($domicilio);
                 $empleado->setRfc($rfc);
                 $empleado->setCurp($curp);
+                $empleado->setIdColonia($colonia);
+                $empleado->setIdCiudad($ciudad);
+                $empleado->setIdEstado($estado);
+                $empleado->setIdPais($pais);
                 
                 $save = $empleado->register();
                 
