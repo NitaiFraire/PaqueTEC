@@ -10,6 +10,16 @@ class EmpleadoController{
         require_once 'Views/usuario/index.php';
     }
 
+    public function formRegister(){
+
+        require_once 'Views/usuario/formRegister.php';
+    }
+
+    public function formLogIn(){
+        
+        require_once 'Views/usuario/formLogIn.php';
+    }
+
     public function register(){
         
         if(isset($_POST)){
@@ -68,5 +78,79 @@ class EmpleadoController{
 
             $_SESSION['register'] = 'failed';
         }
+
+        header('Location:' . baseUrl . 'Empleado/formRegister');
+    }
+
+    public function logIn(){
+        
+        if(isset($_POST)){
+
+
+            $email = isset($_POST['email']) ? $_POST['email'] : false;
+            $password = isset($_POST['password']) ? $_POST['password'] : false;
+
+            if($email && $password){
+
+                $empleado = new Empleado();
+    
+                $empleado->setEmail($email);
+                $empleado->setPassword($password);
+    
+                $identity = $empleado->login();
+
+                if($identity && is_object($identity)){
+
+                    $_SESSION['identified'] = $identity;
+
+                    if($identity->rol == 0){
+
+                        $_SESSION['admin'] = true;
+                    }
+
+                    header('Location:' . baseUrl . 'Paquete/index');
+                
+                }else{
+
+                    $_SESSION['errorLog'] = 'Esta no es tu identificación';
+                    
+                    header('Location:' . baseUrl . 'Empleado/formLogIn');
+                }
+
+            }else{
+
+                $_SESSION['errorLog'] = 'No se recibieron datos de usuario';
+            }
+            
+        }else{
+
+            $_SESSION['errorLog'] = 'No se recibieron datos';
+        }
+    }
+    
+    public function logOut(){
+
+        if(isset($_SESSION['identified'])){
+
+            unset($_SESSION['identified']);
+        }
+
+        if(isset($_SESSION['admin'])){
+
+            unset($_SESSION['admin']);
+        }
+
+        header('Location:' . baseUrl);
+    }
+
+    public function getAll(){
+
+        Utils::isAdmin();
+        
+        $empleado = new Empleado();
+
+        $empleados = $empleado->getEmpleados();
+
+        require_once 'Views/empleado/listaEmpleados.php';
     }
 }
