@@ -6,6 +6,7 @@
     require_once 'Helpers/helper.php';
     require_once 'Config/db.php';
     require_once 'Config/parameters.php';
+<<<<<<< HEAD
     
 /*     if(isset($_SESSION['identified'])){
 
@@ -21,6 +22,12 @@
 */
     
     
+=======
+    require_once 'Views/layout/header.php';
+    
+    
+
+>>>>>>> 0295f9579a4d446a9ccb793ce3d965348d86462d
     if(isset($_GET['controller'])){
 
         $nameController = $_GET['controller'] . 'Controller';
@@ -58,10 +65,14 @@
         Utils::showError();
     } 
 
+<<<<<<< HEAD
 /*     if(isset($_SESSION['identified'])){
 
         require_once 'Views/layout/footer.php';
     }
  */
+=======
+    require_once 'Views/layout/footer.php';
+>>>>>>> 0295f9579a4d446a9ccb793ce3d965348d86462d
 
 ?>
