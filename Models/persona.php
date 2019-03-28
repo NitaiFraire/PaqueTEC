@@ -3,18 +3,18 @@
 class Persona{
 
     // Foreign keys
-    private $idColonia;
+    protected $idColonia;
 
-    private $nombre;
-    private $materno;
-    private $paterno;
-    private $edad;
-    private $rfc;
-    private $curp;
-    private $genero;
-    private $email;
-    private $telefono;
-    private $domicilio;
+    protected $nombre;
+    protected $materno;
+    protected $paterno;
+    protected $edad;
+    protected $rfc;
+    protected $curp;
+    protected $genero;
+    protected $telefono;
+    protected $domicilio;
+    protected $email;
     
     protected $db;
 
