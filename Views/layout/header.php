@@ -30,8 +30,8 @@
                 </div>
                 <div class="menu-derecho">
                     <div class="cerrar caja">
-                        <a href="#">
-                            Cerrar sesión
+                        <a href="<?= baseUrl ?>Empleado/logOut">
+                            <i class="fas fa-sign-out-alt"></i>Cerrar sesión
                         </a>
                     </div>
                 </div>
@@ -41,32 +41,25 @@
         <main class="contenedor-principal">
             <aside class="sidebar">
                 <div class="usuario">
-                    <img src="images/usuario.svg" alt="">
-                    <p>Bienvenido: <span>Admin</span></p>
-                </div>
-                <div class="buscador">
-                    <input type="text" placeholder="Buscar">
+                    <img src="<?= baseUrl ?>/Assets/Images/usuario.svg" alt="">
+                    <p>Bienvenido: <span><?= $_SESSION['identified']->nombre?></span></p>
                 </div>
                 <div class="menu-admin">
-                    <h2>Menú de Administración</h2>
+                    <h2>Menú</h2>
                     <ul class="menu">
+                        <?php if(isset($_SESSION['admin'])):?>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-user-tie"></i> Empleados
-                            </a>
+                            <a href="#"><i class="fas fa-user-tie"></i> Empleados</a>
                             <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-list"></i> Ver Todos
-                                    </a>
+                                    <a href="<?= baseUrl ?>Empleado/getAll"><i class="fas fa-list"></i> Ver Todos</a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-plus"></i> Agregar nuevo
-                                    </a>
+                                    <a href="<?= baseUrl ?>Empleado/formRegister"><i class="fas fa-plus"></i> Agregar nuevo</a>
                                 </li>
                             </ul>
                         </li>
+                        <?php endif; ?>
                         <li>
                             <a href="#">
                                 <i class="fas fa-address-book"></i> Clientes
