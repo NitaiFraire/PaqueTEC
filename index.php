@@ -7,14 +7,18 @@
     require_once 'Config/db.php';
     require_once 'Config/parameters.php';
     
-    if(isset($_SESSION['identified'])){
+/*     if(isset($_SESSION['identified'])){
 
         require_once 'Views/layout/header.php';
 
     }else{
 
-        require_once 'Views/usuario/index.php';
-    }
+        if(!isset($_GET['controller']) && !isset($_GET['action'])){
+
+            require_once 'Views/usuario/index.php';
+        }
+    } 
+*/
     
     
     if(isset($_GET['controller'])){
@@ -54,10 +58,10 @@
         Utils::showError();
     } 
 
-    if(isset($_SESSION['identified'])){
+/*     if(isset($_SESSION['identified'])){
 
         require_once 'Views/layout/footer.php';
     }
-
+ */
 
 ?>
