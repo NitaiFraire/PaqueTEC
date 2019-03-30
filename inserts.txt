@@ -1,0 +1,274 @@
+3 estados por pais.
+5 ciudades por estado.
+5 colonias por ciudad.
+
+
+#***** Paises *****#
+INSERT INTO paises VALUES(null, 'ARGENTINA');
+INSERT INTO paises VALUES(null, 'BRASIL');
+INSERT INTO paises VALUES(null, 'CANADA');
+
+#***** Estados *****#
+
+INSERT INTO estados VALUES(1, null, 'QUERETARO');
+INSERT INTO estados VALUES(2, null, 'CAUCA');
+INSERT INTO estados VALUES(3, null, 'CORDOBA');
+INSERT INTO estados VALUES(3, null, 'SANTA FE');
+INSERT INTO estados VALUES(3, null, 'MISIONES');
+INSERT INTO estados VALUES(4, null, 'ACRE');
+INSERT INTO estados VALUES(4, null, 'CEARA');
+INSERT INTO estados VALUES(4, null, 'GOIAS');
+INSERT INTO estados VALUES(5, null, 'ONTARIO');
+INSERT INTO estados VALUES(5, null, 'QUEBEC');
+INSERT INTO estados VALUES(5, null, 'NUNAVUT');
+
+#***** Ciudad *****#
+//coahuila
+INSERT INTO ciudades VALUES(1, 1, null, 'ACUÑA');
+//sinaloa
+INSERT INTO ciudades VALUES(1, 2, null, 'SALVADOR');
+//queretaro
+INSERT INTO ciudades VALUES(1, 3, null, 'AZTECA');
+INSERT INTO ciudades VALUES(1, 3, null, 'BOLAÑOS');
+INSERT INTO ciudades VALUES(1, 3, null, 'JOFRE');
+//antioquia
+INSERT INTO ciudades VALUES(2, 3, null, 'GRANADA');
+//santander
+INSERT INTO ciudades VALUES(2, 4, null, 'ENCINO');
+//cauca
+INSERT INTO ciudades VALUES(2, 3, null, 'BOLIVAR
+INSERT INTO ciudades VALUES(2, 3, null, 'TORIBIO');
+INSERT INTO ciudades VALUES(2, 3, null, 'ARGELIA');
+//cordoba
+INSERT INTO ciudades VALUES(3, 1, null, 'ARIAS');
+INSERT INTO ciudades VALUES(3, 1, null, 'CRUZ DEL EJE');
+INSERT INTO ciudades VALUES(3, 1, null, 'DEVOTO');
+//santa fe
+INSERT INTO ciudades VALUES(3, 2, null, 'ALDAO');
+INSERT INTO ciudades VALUES(3, 2, null, 'BERRETA');
+INSERT INTO ciudades VALUES(3, 2, null, 'PIÑERO');
+//misiones
+INSERT INTO ciudades VALUES(3, 3, null, 'CAPITAL');
+INSERT INTO ciudades VALUES(3, 3, null, 'IGUAZU');
+INSERT INTO ciudades VALUES(3, 3, null, 'OBERA');
+//acre
+INSERT INTO ciuades VALUES(4, 1, null, 'CRUZEIRO DO SUL');
+INSERT INTO ciuades VALUES(4, 1, null, 'XAPURI');
+INSERT INTO ciuades VALUES(4, 1, null, 'MANCIO LIMA');
+//ceara
+INSERT INTO ciudades VALUES(4, 2, null, 'FORTALEZA');
+INSERT INTO ciudades VALUES(4, 2, null, 'AQUIRAZ');
+INSERT INTO ciudades VALUES(4, 2, null, 'CATO');
+//goias
+INSERT INTO ciudades VALUES(4, 3, null, 'GOIANIA');
+INSERT INTO ciudades VALUES(4, 3, null, 'CIDADE OCIDENTAL');
+INSERT INTO ciudades VALUES(4, 3, null, 'CALDAS NOVAS');
+//ontario
+INSERT INTO ciudades VALUES(5, 1, null, 'TORONTO');
+INSERT INTO ciudades VALUES(5, 1, null, 'OTTAWA');
+INSERT INTO ciudades VALUES(5, 1, null, 'HAMILTON');
+//quebec
+INSERT INTO ciudades VALUES(5, 2, null, 'GANBY');
+INSERT INTO ciudades VALUES(5, 2, null, 'SAGUENAY');
+INSERT INTO ciudades VALUES(5, 2, null, 'MONTREAL');
+//nunavud
+INSERT INTO ciudades VALUES(5, 3, null, 'IQALUIT');
+INSERT INTO ciudades VALUES(5, 3, null, 'POND INLET');
+INSERT INTO ciudades VALUES(5, 3, null, 'ARVIAT');
+
+#***** Colonias *****#
+//COAHUILA//
+//saltillo
+INSERT INTO colonias VALUES(1, 1, 1, null, 'BRISAS');
+INSERT INTO colonias VALUES(1, 1, 1, null, 'SAN PATRICIO PLUS');
+INSERT INTO colonias VALUES(1, 1, 1, null, 'BELLAVISTA');
+//Monclova5
+INSERT INTO colonias VALUES(1, 1, 2, null, 'CAMPESTRE');
+INSERT INTO colonias VALUES(1, 1, 2, null, 'CAÑADA SURESTE');
+INSERT INTO colonias VALUES(1, 1, 2, null, 'PIPILA');
+//Acuña5
+INSERT INTO colonias VALUES(1, 1, 3, null, 'ENCINOS');
+INSERT INTO colonias VALUES(1, 1, 3, null, 'FLORES TAPIA');
+INSERT INTO colonias VALUES(1, 1, 3, null, 'TIERRA Y ESPERANZA');
+//SINALOA//
+//culiacan5
+INSERT INTO colonias VALUES(1, 2, 1, null, 'AZUCENA');
+INSERT INTO colonias VALUES(1, 2, 1, null, 'DIAMANTE');
+INSERT INTO colonias VALUES(1, 2, 1, null, 'REVOLUCION');
+//mazatlan5
+INSERT INTO colonias VALUES(1, 2, 2, null, 'BENITO JUAREZ');
+INSERT INTO colonias VALUES(1, 2, 2, null, 'UNIVERSIDAD 94');
+INSERT INTO colonias VALUES(1, 2, 2, null, 'VILLA TEQUILA');
+//salvador5
+INSERT INTO colonias VALUES(1, 2, 3, null, 'AMAPAS');
+INSERT INTO colonias VALUES(1, 2, 3, null, 'LOMA LINDA');
+INSERT INTO colonias VALUES(1, 2, 3, null, 'LOS ALAMOS');
+//QUERETARO//
+//azteca
+INSERT INTO colonias VALUES(1, 3, 1, null, 'ANAHUAC');
+INSERT INTO colonias VALUES(1, 3, 1, null, 'INDEPENDENCIA');
+INSERT INTO colonias VALUES(1, 3, 1, null, 'MODELO');
+//bolaños
+INSERT INTO colonias VALUES(1, 3, 2, null, 'QUINTA ALICIA');
+INSERT INTO colonias VALUES(1, 3, 2, null, 'RANCHO BELLAVISTA');
+INSERT INTO colonias VALUES(1, 3, 2, null, 'SAN DIEGO');
+//jofre5
+INSERT INTO colonias VALUES(1, 3, 3, null, 'TLANESE');
+INSERT INTO colonias VALUES(1, 3, 3, null, 'VISTAS DEL VALLE');
+INSERT INTO colonias VALUES(1, 3, 3, null, 'PRADERAS ');
+//ANTIOQUIA//
+//medellin
+INSERT INTO colonias VALUES(2, 1, 1, null, 'JOSE ÑPZANO');
+INSERT INTO colonias VALUES(2, 1, 1, null, 'LOS PINOS');
+INSERT INTO colonias VALUES(2, 1, 1, null, 'POTRERILLO');
+//zaragoza
+INSERT INTO colonias VALUES(2, 1, 2, null, 'CAUCASIA');
+INSERT INTO colonias VALUES(2, 1, 2, null, 'SEPTIMO DIA');
+INSERT INTO colonias VALUES(2, 1, 2, null, 'TERPEL');
+//granada
+INSERT INTO colonias VALUES(2, 1, 3, null, 'VILLA MANA');
+INSERT INTO colonias VALUES(2, 1, 3, null, 'RIO NECHI');
+INSERT INTO colonias VALUES(2, 1, 3, null, 'CIMITARRA');
+//SANTANDER//
+//socorro5
+INSERT INTO colonias VALUES(2, 2, 1, null, 'PUERTO BERRIO');
+INSERT INTO colonias VALUES(2, 2, 1, null, 'BARBOSA');
+INSERT INTO colonias VALUES(2, 2, 1, null, 'PUERTO BOYACA');
+//oiba5
+INSERT INTO colonias VALUES(2, 2, 2, null, 'SEGOVIA');
+INSERT INTO colonias VALUES(2, 2, 2, null, 'AMALFI');
+INSERT INTO colonias VALUES(2, 2, 2, null, 'SAN PABLO');
+//encino5
+INSERT INTO colonias VALUES(2, 2, 3, null, 'EL BAGRE');
+INSERT INTO colonias VALUES(2, 2, 3, null, 'RIONEGRO');
+INSERT INTO colonias VALUES(2, 2, 3, null, 'LA HONDA');
+//CAUCA//
+//bolivar5
+INSERT INTO colonias VALUES(2, 3, 1, null, 'VILLA LEYVA');
+INSERT INTO colonias VALUES(2, 3, 1, null, 'MONIQUITA');
+INSERT INTO colonias VALUES(2, 3, 1, null, 'ENVIGADO');
+//toribio5
+INSERT INTO colonias VALUES(2, 3, 2, null, 'ESPINAL');
+INSERT INTO colonias VALUES(2, 3, 2, null, 'CHAPARRAL');
+INSERT INTO colonias VALUES(2, 3, 2, null, 'CARTAGO');
+//argelia5
+INSERT INTO colonias VALUES(2, 3, 3, null, 'MANIZALES');
+INSERT INTO colonias VALUES(2, 3, 3, null, 'SOACHA');
+INSERT INTO colonias VALUES(2, 3, 3, null, 'ACACIAS');
+//CORDOBA//
+//arias5
+INSERT INTO colonias VALUES(3, 1, 1, null, 'NUEVA GALIA');
+INSERT INTO colonias VALUES(3, 1, 1, null, 'BAGUAL');
+INSERT INTO colonias VALUES(3, 1, 1, null, 'ITALO');
+//cruz del eje5
+INSERT INTO colonias VALUES(3, 1, 2, null, 'BARON');
+INSERT INTO colonias VALUES(3, 1, 2, null, 'SANTA ROSA');
+INSERT INTO colonias VALUES(3, 1, 2, null, 'TELEN');
+//devoto5
+INSERT INTO colonias VALUES(3, 1, 3, null, 'LA PASTORIL');
+INSERT INTO colonias VALUES(3, 1, 3, null, 'SANTA ISABEL');
+INSERT INTO colonias VALUES(3, 1, 3, null, 'BARRANCAS');
+//SANTA FE//
+//aldao5
+INSERT INTO colonias VALUES(3, 2, 1, null, 'CHOS MALAR');
+INSERT INTO colonias VALUES(3, 2, 1, null, 'HUNCAL');
+INSERT INTO colonias VALUES(3, 2, 1, null, 'LAS LAJAS');
+//berreta5
+INSERT INTO colonias VALUES(3, 2, 2, null, 'ZAPALA');
+INSERT INTO colonias VALUES(3, 2, 2, null, 'LAS COLORADAS');
+INSERT INTO colonias VALUES(3, 2, 2, null, 'ACHICO');
+//piñero5
+INSERT INTO colonias VALUES(3, 2, 3, null, 'PASO FLORES');
+INSERT INTO colonias VALUES(3, 2, 3, null, 'COMALLO');
+INSERT INTO colonias VALUES(3, 2, 3, null, 'PILCANIYU');
+//MISIONES//
+//capital5
+INSERT INTO colonias VALUES(3, 3, 1, null, 'QUETREQUILE');
+INSERT INTO colonias VALUES(3, 3, 1, null, 'RIO CHICO');
+INSERT INTO colonias VALUES(3, 3, 1, null, 'LAS BAYAS');
+//iguazu5
+INSERT INTO colonias VALUES(3, 3, 2, null, 'EL BOLSON');
+INSERT INTO colonias VALUES(3, 3, 2, null, 'LLANADA GRANDE');
+INSERT INTO colonias VALUES(3, 3, 2, null, 'CHOLILA');
+//obera5
+INSERT INTO colonias VALUES(3, 3, 3, null, 'LOS CIPRESES');
+INSERT INTO colonias VALUES(3, 3, 3, null, 'GASTRE');
+INSERT INTO colonias VALUES(3, 3, 3, null, 'EL CAIN');
+//ACRE//
+//cruzeiro do sul5
+INSERT INTO colonias VALUES(4, 1, 1, null, 'SIERRA COLORADA');
+INSERT INTO colonias VALUES(4, 1, 1, null, 'VILCHETA');
+INSERT INTO colonias VALUES(4, 1, 1, null, 'MANCHA BLANCA');
+//xapuri5
+INSERT INTO colonias VALUES(4, 1, 2, null, 'POMONA');
+INSERT INTO colonias VALUES(4, 1, 2, null, 'LAMARQUE');
+INSERT INTO colonias VALUES(4, 1, 2, null, 'DARWIN');
+//mancio lima5
+INSERT INTO colonias VALUES(4, 1, 3, null, 'PULCHES');
+INSERT INTO colonias VALUES(4, 1, 3, null, 'VALLE DAZA');
+INSERT INTO colonias VALUES(4, 1, 3, null, 'GENERAL ARCHA');
+//CEARA//
+//fortaleza5
+INSERT INTO colonias VALUES(4, 2, 1, null, 'ATLALIVA ROCCA');
+INSERT INTO colonias VALUES(4, 2, 1, null, 'MACACHIN');
+INSERT INTO colonias VALUES(4, 2, 1, null, 'RIVERA');
+//aquiraz5
+INSERT INTO colonias VALUES(4, 2, 2, null, 'PUAN');
+INSERT INTO colonias VALUES(4, 2, 2, null, 'PIGUE');
+INSERT INTO colonias VALUES(4, 2, 2, null, 'CORONEL SUAREZ');
+//cato5
+INSERT INTO colonias VALUES(4, 2, 3, null, 'RONDONIA');
+INSERT INTO colonias VALUES(4, 2, 3, null, 'BOCA DE ACRE');
+INSERT INTO colonias VALUES(4, 2, 3, null, 'MAPIA');
+//GOIAS//
+//goiania5
+INSERT INTO colonias VALUES(4, 3, 1, null, 'NOVA EPRESA');
+INSERT INTO colonias VALUES(4, 3, 1, null, 'MANOEL URBANO');
+INSERT INTO colonias VALUES(4, 3, 1, null, 'CACHUELA DO CASTRO');
+//cidade ocidental5
+INSERT INTO colonias VALUES(4, 3, 2, null, 'BUZETA');
+INSERT INTO colonias VALUES(4, 3, 2, null, 'ESTANI');
+INSERT INTO colonias VALUES(4, 3, 2, null, 'EL SARA');
+//caldas novas5
+INSERT INTO colonias VALUES(4, 3, 3, null, 'BAURES');
+INSERT INTO colonias VALUES(4, 3, 3, null, 'CASARABE');
+INSERT INTO colonias VALUES(4, 3, 3, null, 'LORETO');
+//ONTARIO//
+//toronto5
+INSERT INTO colonias VALUES(5, 1, 1, null, 'ORANGEVILLE');
+INSERT INTO colonias VALUES(5, 1, 1, null, 'CALEDON');
+INSERT INTO colonias VALUES(5, 1, 1, null, 'ERIN');
+//otawa5
+INSERT INTO colonias VALUES(5, 1, 2, null, 'BRAMPTON');
+INSERT INTO colonias VALUES(5, 1, 2, null, 'NORTH YORK');
+INSERT INTO colonias VALUES(5, 1, 2, null, 'SMITHFIELD');
+//hamilton5
+INSERT INTO colonias VALUES(5, 1, 3, null, 'YORK');
+INSERT INTO colonias VALUES(5, 1, 3, null, 'WOODBRIDGE');
+INSERT INTO colonias VALUES(5, 1, 3, null, 'WILLOW DALE');
+//QUEBEC//
+//ganby5
+INSERT INTO colonias VALUES(5, 2, 1, null, 'BAYVIEW');
+INSERT INTO colonias VALUES(5, 2, 1, null, 'DOWNSVIEW');
+INSERT INTO colonias VALUES(5, 2, 1, null, 'MALVERN');
+//saguenay5
+INSERT INTO colonias VALUES(5, 2, 2, null, 'STEELES');
+INSERT INTO colonias VALUES(5, 2, 2, null, 'CLIFFSIDE');
+INSERT INTO colonias VALUES(5, 2, 2, null, 'PORT UNION');
+//montreal5
+INSERT INTO colonias VALUES(5, 2, 3, null, 'RICHMOND HILL');
+INSERT INTO colonias VALUES(5, 2, 3, null, 'VAUGHAN');
+INSERT INTO colonias VALUES(5, 2, 3, null, 'KING CITY');
+//NUNAVUD//
+//iqaluit5
+INSERT INTO colonias VALUES(5, 3, 1, null, 'LASKAY');
+INSERT INTO colonias VALUES(5, 3, 1, null, 'GORNMLEY');
+INSERT INTO colonias VALUES(5, 3, 1, null, 'PICKERING');
+//pond inlet5
+INSERT INTO colonias VALUES(5, 3, 2, null, 'AJAX');
+INSERT INTO colonias VALUES(5, 3, 2, null, 'WEST HILL');
+INSERT INTO colonias VALUES(5, 3, 2, null, 'LEMON VILLE');
+//arviat5
+INSERT INTO colonias VALUES(5, 3, 3, null, 'BALLANTRAE');
+INSERT INTO colonias VALUES(5, 3, 3, null, 'SNOWBALL');
+INSERT INTO colonias VALUES(5, 3, 3, null, 'GOODWOOD');
