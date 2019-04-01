@@ -12,6 +12,7 @@ class EmpleadoController{
 
     public function formRegister(){
 
+        Utils::isAdmin();
         require_once 'Views/usuario/formRegister.php';
     }
 
@@ -21,7 +22,7 @@ class EmpleadoController{
     }
 
     public function register(){
-        
+
         if(isset($_POST)){
 
             $nombre = isset($_POST['name']) ? $_POST['name'] : false;
