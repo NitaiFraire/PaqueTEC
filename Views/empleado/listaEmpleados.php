@@ -10,6 +10,9 @@
       <th scope="col">Email</th>
       <th scope="col">Telefono</th>
       <th scope="col">Colonia</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Pais</th>
       <th scope="col">Domicilio</th>
     </tr>
   </thead>
@@ -23,6 +26,9 @@
       <td><?=$empleado->email?></td>
       <td><?=$empleado->telefono?></td>
       <td><?=$empleado->idColonia?></td>
+      <td><?=$empleado->idCiudad?></td>
+      <td><?=$empleado->idEstado?></td>
+      <td><?=$empleado->idPais?></td>
       <td><?=$empleado->domicilio?></td>
     </tr>
     <?php endwhile;?>
