@@ -2,6 +2,9 @@
 
 INSERT INTO paises VALUES(null, 'MEXICO');
 INSERT INTO paises VALUES(null, 'COLOMBIA');
+INSERT INTO paises VALUES(null, 'ARGENTINA');
+INSERT INTO paises VALUES(null, 'BRASIL');
+INSERT INTO paises VALUES(null, 'CANADA');
 
 #***** /Paises *****#
 
