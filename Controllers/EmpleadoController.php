@@ -38,8 +38,8 @@ class EmpleadoController{
             $curp = isset($_POST['curp']) ? $_POST['curp'] : false;
             $colonia = isset($_POST['colonia']) ? $_POST['colonia'] : false;
             $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : false;
-            $ciudad = isset($_POST['estado']) ? $_POST['estado'] : false;
-            $ciudad = isset($_POST['pais']) ? $_POST['pais'] : false;
+            $estado = isset($_POST['estado']) ? $_POST['estado'] : false;
+            $pais = isset($_POST['pais']) ? $_POST['pais'] : false;
 
             if($nombre && $materno && $paterno
                 && $email && $password && $edad 
@@ -92,7 +92,6 @@ class EmpleadoController{
     public function logIn(){
         
         if(isset($_POST)){
-
 
             $email = isset($_POST['email']) ? $_POST['email'] : false;
             $password = isset($_POST['password']) ? $_POST['password'] : false;

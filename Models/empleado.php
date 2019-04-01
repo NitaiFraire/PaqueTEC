@@ -40,8 +40,8 @@ class Empleado extends Persona{
 
     public function getPassword(){
 
-/*         $encriptarPassword = $this->db->real_escape_string($this->password);
-        $this->password = password_hash($encriptarPassword, PASSWORD_BCRYPT, ['cost' => 4]); */
+        $encriptarPassword = $this->db->real_escape_string($this->password);
+        $this->password = password_hash($encriptarPassword, PASSWORD_BCRYPT, ['cost' => 4]);
 
         return $this->password;
     }
@@ -104,15 +104,15 @@ class Empleado extends Persona{
 
             $empleado = $login->fetch_object();
 
-/*             $verify = password_verify($password, $empleado->password);
+            $verify = password_verify($password, $empleado->password);
 
             if($verify){
 
                 $result = $empleado;
-            } */
+            }
         }
 
-        return $empleado;
+        return $result;
     }
 
     public function getEmpleados(){
