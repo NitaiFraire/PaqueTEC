@@ -61,53 +61,35 @@
                         </li>
                         <?php endif; ?>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-address-book"></i> Clientes
-                            </a>
+                            <a href="#"><i class="fas fa-address-book"></i> Clientes</a>
                             <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-list"></i> Ver Todos
-                                    </a>
+                                    <a href="<?= baseUrl ?>Cliente/getAll"><i class="fas fa-list"></i> Ver Todos</a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-plus"></i> Agregar nuevo
-                                    </a>
+                                    <a href="<?= baseUrl ?>Cliente/formRegister"><i class="fas fa-plus"></i> Agregar nuevo</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-box"></i> Paquetes
-                            </a>
+                            <a href="#"><i class="fas fa-box"></i> Paquetes</a>
                             <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-list"></i> Ver Todos
-                                    </a>
+                                    <a href="#"><i class="fas fa-list"></i> Ver Todos</a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-plus"></i> Agregar nuevo
-                                    </a>
+                                    <a href="#"><i class="fas fa-plus"></i> Agregar nuevo</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-file-alt"></i> Facturas
-                            </a>
+                            <a href="#"><i class="fas fa-file-alt"></i> Facturas</a>
                             <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-list"></i> Ver Todos
-                                    </a>
+                                    <a href="#"><i class="fas fa-list"></i> Ver Todos</a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fas fa-plus"></i> Agregar nuevo
-                                    </a>
+                                    <a href="#"><i class="fas fa-plus"></i> Agregar nuevo</a>
                                 </li>
                             </ul>
                         </li>

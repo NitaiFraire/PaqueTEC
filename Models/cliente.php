@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Models/persona.php';
+
 class Cliente extends Persona{
     
     private $idCliente;
