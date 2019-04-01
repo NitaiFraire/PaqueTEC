@@ -80,7 +80,7 @@ class Colonia{
     
     public function getColonias(){
         
-        $sql = "SELECT * FROM colonias ORDER BY idColonia DESC";
+        $sql = "SELECT * FROM colonias WHERE idCiudad = {$this->getIdCiudad()} ORDER BY idColonia DESC";
         $colonias = $this->db->query($sql);
 
         return $colonias;

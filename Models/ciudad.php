@@ -59,5 +59,14 @@
                 
             $this->nombreCiudad = $nombreCiudad;
         }
+
+        public function getCiudades(){
+
+            $sql = "SELECT * FROM ciudades WHERE idEstado = {$this->getIdEstado()} ORDER BY idCiudad DESC";
+
+            $ciudades = $this->db->query($sql);
+
+            return $ciudades;
+        }
     }
 ?>

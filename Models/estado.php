@@ -48,6 +48,16 @@ class Estado{
         $this->nombreEstado = $nombreEstado;
     }
 
+
+    public function getEstados(){
+        
+        $sql = "SELECT * FROM estados WHERE idPais = {$this->getIdPais()} ORDER BY idEstado DESC";
+
+        $estados = $this->db->query($sql);
+
+        return $estados;
+    }
+
 }
 
 

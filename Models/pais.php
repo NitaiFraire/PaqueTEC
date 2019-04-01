@@ -34,4 +34,14 @@ class Pais{
         $this->nombrePais = $nombrePais;
     }
 
+
+    public function getPaises(){
+
+        $sql = "SELECT * FROM paises ORDER BY idPais DESC";
+
+        $paises = $this->db->query($sql);
+
+        return $paises;
+    }
+
 }
