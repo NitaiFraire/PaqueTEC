@@ -1,16 +1,12 @@
 <?php require_once 'Views/layout/header.php' ?>
 <h1 class="text-center mt-2">Registro</h1>
 
-
 <div class="container">
     <?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'success'): ?>
-    <h2 class="alert alert-success text-center" role="alert">Empleado creado correctamente<i
-            class="fas fa-check-circle ml-3"></i></h2>
-    <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'):?>
-    <h2 class="alert alert-danger text-center" role="alert">Error al crear empleado<i class="fas fa-times ml-3"></i>
-    </h2>
+        <h2 class="alert alert-success text-center" role="alert">Empleado creado correctamente<i class="fas fa-check-circle ml-3"></i></h2>
+    <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
+        <h2 class="alert alert-danger text-center" role="alert">Error al crear empleado<i class="fas fa-times ml-3"></i></h2>
     <?php endif; ?>
-    
     <?php Utils::deleteSession('register')?>
     <div class="justify-content-center">
         <form action="<?=baseUrl?>Empleado/register" class="my-3" method="POST">
@@ -66,14 +62,34 @@
                     <input type="text" class="form-control" id="domicilio" name="domicilio" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="colonia">Colonia</label>
-                    <?php $colonias = Utils::showColonias(); ?>
-                    <select name="colonia" id="colonia" class="form-control custom-select" required>
-                        <?php while ($colonia = $colonias->fetch_object()) : ?>
-                        <option value="<?= $colonia->idColonia ?>">
-                            <?= $colonia->nombreColonia ?>
+                    <label for="pais">Pais</label>
+                    <?php $paises = Utils::showPaises(); ?>
+                    <select name="pais" id="pais" class="form-control custom-select" required>
+                        <?php while ($pais = $paises->fetch_object()) : ?>
+                        <option value="<?= $pais->idPais ?>">
+                            <?= $pais->nombrePais ?>
                         </option>
                         <?php endwhile; ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control custom-select">
+                            <option selected="selected">Selecciona un país</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ciudad">Ciudad</label>
+                    <select name="ciudad" id="ciudad" class="form-control custom-select">
+                        <option selected="selected">Selecciona una estado</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="colonia">Colonia</label>
+                    <select name="colonia" id="colonia" class="form-control custom-select">
+                        <option selected="selected">Selecciona una ciudad</option>
                     </select>
                 </div>
             </div>
@@ -92,7 +108,4 @@
     </div>
 </div>
 
-
-
-
-<?php require_once 'Views/layout/footer.php'?>
+<?php require_once 'Views/layout/footer.php'; ?>
