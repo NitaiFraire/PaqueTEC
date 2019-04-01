@@ -92,7 +92,7 @@ CREATE TABLE clientes(
     curp            varchar(18) not null,
     genero          varchar(10) not null,
     email           varchar(255) not null,
-    telefono        int(10) not null,
+    telefono        varchar(10) not null,
     domicilio       varchar(255) not null,
     
     CONSTRAINT pk_id_cliente PRIMARY KEY(idCliente),
@@ -132,7 +132,7 @@ CREATE TABLE empleados(
     genero              varchar(10) not null,
     email               varchar(255) not null,
     password            varchar(255) not null,
-    telefono            int(10) not null,
+    telefono            varchar(10) not null,
     domicilio           varchar(255) not null,
     rol                 int(1),
 
