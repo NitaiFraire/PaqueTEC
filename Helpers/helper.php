@@ -19,29 +19,36 @@
             return $name;
         }
 
-        public static function showColonias(){
+        public static function showPaises(){
 
-            require_once 'Models/colonias.php';
+            require_once 'Models/pais.php';
 
-            $colonia = new Colonia();
-            $colonias = $colonia->getColonias();
+            $pais = new Pais();
+            $paises = $pais->getPaises();
 
-            return $colonias;
+            return $paises;
         }
 
         public static function isAdmin(){
 
-
-            if(!isset($_SESSION['identified'])){
+            if(!isset($_SESSION['admin'])){
 
                 header('Location:' . baseUrl);
 
-            }elseif(!isset($_SESSION['admin'])){
-
-                header('Location:' . baseUrl . 'Paquete/index');
-
             }else{
 
+                return true;
+            }
+        }
+
+        public static function isIdentified(){
+
+            if(!isset($_SESSION['identified'])){
+                
+                header('Location:' . baseUrl);
+                
+            }else{
+                
                 return true;
             }
         }
