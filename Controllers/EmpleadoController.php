@@ -13,12 +13,12 @@ class EmpleadoController{
     public function formRegister(){
 
         Utils::isAdmin();
-        require_once 'Views/usuario/formRegister.php';
+        require_once 'Views/empleado/formRegister.php';
     }
 
     public function formLogIn(){
         
-        require_once 'Views/usuario/formLogIn.php';
+        require_once 'Views/empleado/formLogIn.php';
     }
 
     public function register(){
