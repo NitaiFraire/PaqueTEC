@@ -83,7 +83,7 @@ INSERT INTO colonias VALUES(2, 4, 7, null, 'VALLE VERDE');
 # OIBA
 INSERT INTO colonias VALUES(2, 4, 8, null, 'ARBOLEDAS');
 INSERT INTO colonias VALUES(2, 4, 8, null, 'PARAISO');
-
+ 
 
 #****** /Colonias ******#
 
