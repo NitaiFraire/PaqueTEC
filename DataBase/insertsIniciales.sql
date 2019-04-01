@@ -157,17 +157,17 @@ INSERT INTO colonias VALUES(1, 2, 3, null, 'LOS ALAMOS');
 
 ## pais MEXICO, estado QUERETARO
 
-# azteca
+# AZTECA
 INSERT INTO colonias VALUES(1, 3, 1, null, 'ANAHUAC');
 INSERT INTO colonias VALUES(1, 3, 1, null, 'INDEPENDENCIA');
 INSERT INTO colonias VALUES(1, 3, 1, null, 'MODELO');
 
-# bolaños
+# BOLAÑOS
 INSERT INTO colonias VALUES(1, 3, 2, null, 'QUINTA ALICIA');
 INSERT INTO colonias VALUES(1, 3, 2, null, 'RANCHO BELLAVISTA');
 INSERT INTO colonias VALUES(1, 3, 2, null, 'SAN DIEGO');
 
-# jofre
+# JOFRE
 INSERT INTO colonias VALUES(1, 3, 3, null, 'TLANESE');
 INSERT INTO colonias VALUES(1, 3, 3, null, 'VISTAS DEL VALLE');
 INSERT INTO colonias VALUES(1, 3, 3, null, 'PRADERAS ');
@@ -199,9 +199,6 @@ INSERT INTO colonias VALUES(2, 2, 1, null, 'PUERTO BERRIO');
 # OIBA
 INSERT INTO colonias VALUES(2, 4, 8, null, 'ARBOLEDAS');
 INSERT INTO colonias VALUES(2, 4, 8, null, 'PARAISO');
-<<<<<<< HEAD
- 
-=======
 INSERT INTO colonias VALUES(2, 2, 2, null, 'SEGOVIA');
 
 # ENCINO
@@ -209,7 +206,7 @@ INSERT INTO colonias VALUES(2, 2, 3, null, 'EL BAGRE');
 INSERT INTO colonias VALUES(2, 2, 3, null, 'RIONEGRO');
 INSERT INTO colonias VALUES(2, 2, 3, null, 'LA HONDA');
 
-# CAUCA
+## pais COLOMBIA, estado CAUCA ##
 
 # BOLIVAR
 INSERT INTO colonias VALUES(2, 3, 1, null, 'VILLA LEYVA');
@@ -329,6 +326,7 @@ INSERT INTO colonias VALUES(4, 3, 3, null, 'CASARABE');
 INSERT INTO colonias VALUES(4, 3, 3, null, 'LORETO');
 
 ## pais CANADA, estado ONTARIO
+
 #TORONTO
 INSERT INTO colonias VALUES(5, 1, 1, null, 'ORANGEVILLE');
 INSERT INTO colonias VALUES(5, 1, 1, null, 'CALEDON');
@@ -345,6 +343,7 @@ INSERT INTO colonias VALUES(5, 1, 3, null, 'WOODBRIDGE');
 INSERT INTO colonias VALUES(5, 1, 3, null, 'WILLOW DALE');
 
 ## pais CANADA, estado QUEBEC
+
 #GANBY
 INSERT INTO colonias VALUES(5, 2, 1, null, 'BAYVIEW');
 INSERT INTO colonias VALUES(5, 2, 1, null, 'DOWNSVIEW');
@@ -362,6 +361,7 @@ INSERT INTO colonias VALUES(5, 2, 3, null, 'KING CITY');
 
 
 ## pais CANADA, estado NUNAVUD
+
 #IQALUIT
 INSERT INTO colonias VALUES(5, 3, 1, null, 'LASKAY');
 INSERT INTO colonias VALUES(5, 3, 1, null, 'GORNMLEY');
@@ -376,7 +376,6 @@ INSERT INTO colonias VALUES(5, 3, 2, null, 'LEMON VILLE');
 INSERT INTO colonias VALUES(5, 3, 3, null, 'BALLANTRAE');
 INSERT INTO colonias VALUES(5, 3, 3, null, 'SNOWBALL');
 INSERT INTO colonias VALUES(5, 3, 3, null, 'GOODWOOD');
->>>>>>> 5a4eac3bf48b633e211ee04e381e1fdfe23e8352
 
 #****** /Colonias ******#
 
