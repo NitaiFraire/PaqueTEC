@@ -154,7 +154,6 @@ class EmpleadoController{
         Utils::isAdmin();
         
         $empleado = new Empleado();
-
         $empleados = $empleado->getEmpleados();
 
         require_once 'Views/empleado/listaEmpleados.php';
