@@ -100,7 +100,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="curp">CURP</label>
-                    <input type="text" class="form-control" id="curp" name="curp" required pattern="[A-Z0-9]{18}">
+                    <input type="text" class="form-control" id="curp" name="curp" pattern="[A-Z0-9]{18}">
                 </div>
             </div>
             <input type="submit" class="btn btn-lg btn-primary mt-3" value="Enviar">
