@@ -26,7 +26,7 @@ class EmpleadoController{
         if(isset($_POST)){
 
             $nombre = isset($_POST['name']) ? $_POST['name'] : false;
-            $materno = isset($_POST['materno']) ? $_POST['materno']: '';
+            $materno = isset($_POST['materno']) ? $_POST['materno']: false;
             $paterno = isset($_POST['paterno']) ? $_POST['paterno'] : false;
             $email = isset($_POST['email']) ? $_POST['email'] : false;
             $password = isset($_POST['password']) ? $_POST['password'] : false;
