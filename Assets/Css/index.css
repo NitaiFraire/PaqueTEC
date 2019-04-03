@@ -258,6 +258,7 @@ footer{
 
     border-radius: 20px;
     opacity: 0.9;
+    box-shadow: 0px 9px 16px 1px rgba(0,0,0,0.75);
 }
 
 .logIn{
