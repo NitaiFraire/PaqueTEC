@@ -1,5 +1,5 @@
 <?php require_once 'Views/layout/header.php' ?>
-<h1 class="text-center mt-2">Registro</h1>
+<h1 class="text-center mt-2">Registro de empleado</h1>
 
 <div class="container">
     <?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'success'): ?>
@@ -58,10 +58,6 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="domicilio">Domicilio</label>
-                    <input type="text" class="form-control" id="domicilio" name="domicilio" required>
-                </div>
-                <div class="form-group col-md-6">
                     <label for="pais">Pais</label>
                     <?php $paises = Utils::showPaises(); ?>
                     <select name="pais" id="pais" class="form-control custom-select" required>
@@ -72,14 +68,14 @@
                         <?php endwhile; ?>
                     </select>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <label for="estado">Estado</label>
                     <select name="estado" id="estado" class="form-control custom-select">
                             <option selected="selected">Selecciona un país</option>
                     </select>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="ciudad">Ciudad</label>
                     <select name="ciudad" id="ciudad" class="form-control custom-select">
@@ -91,6 +87,10 @@
                     <select name="colonia" id="colonia" class="form-control custom-select">
                         <option selected="selected">Selecciona una ciudad</option>
                     </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="domicilio">Domicilio</label>
+                    <input type="text" class="form-control" id="domicilio" name="domicilio" required>
                 </div>
             </div>
             <div class="form-row">
