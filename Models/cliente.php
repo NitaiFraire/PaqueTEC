@@ -57,7 +57,23 @@ class Cliente extends Persona{
 
     public function getClientes(){
         
-        $sql = "SELECT * FROM clientes ORDER BY idCliente DESC";
+        $sql = "SELECT  cli.idCliente, cli.nombre, cli.paterno, cli.materno, cli.rfc, cli.curp, cli.email, cli.telefono, cli.domicilio,
+                        col.nombreColonia AS nombreColonia, ciu.nombreCiudad AS nombreCiudad, est.nombreEstado AS nombreEstado, pai.nombrePais AS nombrePais
+                FROM    clientes cli, colonias col, ciudades ciu, estados est, paises pai 
+                WHERE   cli.idPais = col.idPais AND
+                        cli.idEstado = col.idEstado AND
+                        cli.idCiudad = col.idCiudad AND
+                        cli.idColonia = col.idColonia AND
+
+                        col.idPais = ciu.idPais AND
+                        col.idEstado = ciu.idEstado AND
+                        col.idCiudad = ciu.idCiudad AND
+
+                        ciu.idPais = est.idPais AND
+                        ciu.idEstado = est.idEstado AND
+
+                        est.idPais = pai.idPais
+                ORDER BY idCliente DESC";
 
         $clientes = $this->db->query($sql);
 
