@@ -117,7 +117,20 @@ class Empleado extends Persona{
 
     public function getEmpleados(){
 
-        $sql = "SELECT * FROM empleados ORDER BY idEmpleado DESC";
+        $sql = "SELECT  e.idEmpleado, e.nombre, e.paterno, e.materno, e.rfc, e.curp, e.email, e.telefono, e.domicilio,
+                        colonia.nombreColonia AS nombreColonia, ciudad.nombreCiudad AS nombreCiudad, estado.nombreEstado AS nombreEstado, pais.nombrePais AS nombrePais
+                FROM    empleados e, colonias colonia, ciudades ciudad, estados estado, paises pais 
+                WHERE   e.idPais = colonia.idPais AND
+                        e.idEstado = colonia.idEstado AND
+                        e.idColonia = colonia.idColonia AND
+                        e.idCiudad = colonia.idCiudad AND
+                        colonia.idPais = ciudad.idPais AND
+                        colonia.idEstado = ciudad.idEstado AND
+                        colonia.idCiudad = ciudad.idCiudad AND
+                        ciudad.idPais = estado.idPais AND
+                        ciudad.idEstado = estado.idEstado AND
+                        estado.idPais = pais.idPais
+                ORDER BY idEmpleado DESC;";
 
         $empleados = $this->db->query($sql);
 
