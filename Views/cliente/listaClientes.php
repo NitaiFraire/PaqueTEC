@@ -25,10 +25,10 @@
       <td><?=$cliente->materno?></td>
       <td><?=$cliente->email?></td>
       <td><?=$cliente->telefono?></td>
-      <td><?=$cliente->idColonia?></td>
-      <td><?=$cliente->idCiudad?></td>
-      <td><?=$cliente->idEstado?></td>
-      <td><?=$cliente->idPais?></td>
+      <td><?=$cliente->nombreColonia?></td>
+      <td><?=$cliente->nombreCiudad?></td>
+      <td><?=$cliente->nombreEstado?></td>
+      <td><?=$cliente->nombrePais?></td>
       <td><?=$cliente->domicilio?></td>
     </tr>
     <?php endwhile;?>
