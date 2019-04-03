@@ -25,13 +25,14 @@
       <td><?=$empleado->materno?></td>
       <td><?=$empleado->email?></td>
       <td><?=$empleado->telefono?></td>
-      <td><?=$empleado->idColonia?></td>
-      <td><?=$empleado->idCiudad?></td>
-      <td><?=$empleado->idEstado?></td>
-      <td><?=$empleado->idPais?></td>
+      <td><?=$empleado->nombreColonia?></td>
+      <td><?=$empleado->nombreCiudad?></td>
+      <td><?=$empleado->nombreEstado?></td>
+      <td><?=$empleado->nombrePais?></td>
       <td><?=$empleado->domicilio?></td>
     </tr>
     <?php endwhile;?>
   </tbody>
 </table>
 <?php require_once 'Views/layout/footer.php'; ?>
+      
