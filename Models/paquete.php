@@ -15,6 +15,7 @@ class Paquete{
     private $observaciones;
     private $fechaEntrega;
     private $horaEntrega;
+    private $estado;
     
     private $db;
 
@@ -145,6 +146,51 @@ class Paquete{
 
         $this->horaEntrega = $horaEntrega;
     }
+
+
+    public function getEstado(){
+        
+        return $this->estado;
+    }
+
+    public function setEstado($estado){
+
+        $this->estado = $estado;
+    }
+
+    /* Funciones de modelo */
+
+    public function register(){
+        
+        $sql = "INSERT INTO paquetes VALUES('{$this->getIdCliente()}',
+                                            '{$this->getIdEmpleado()}',
+                                            NULL,
+                                            '{$this->getFechaEnvio()}',
+                                            '{$this->getContenido()}',
+                                            '{$this->getPeso()}',
+                                            '{$this->getDiaAlta()}',
+                                            '{$this->getPrecioEnvio()}',
+                                            '{$this->getObservaciones()}',
+                                            '{$this->getFechaEntrega()}',
+                                            '{$this->getHoraEntrega()}',
+                                            '{$this->getEstado()}')";
+        
+        $save = $this->db->query($sql);
+ 
+        $result = false;
+
+        if($save){
+
+            $result = true;
+
+        }
+
+        return $result;
+    }
+
+    /* /Funciones de modelo */
+
+
 }
 
 ?>
