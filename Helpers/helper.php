@@ -29,6 +29,19 @@
             return $paises;
         }
 
+        public static function showclientes(){
+            
+            require_once 'Models/cliente.php';
+
+            $idCiudad = $_SESSION['identified']->idCiudad;
+
+            $cliente = new Cliente();
+            $cliente->setIdCiudad($idCiudad);
+            $clientes = $cliente->getClientesPorCiudad();
+
+            return $clientes;
+        }
+
         public static function isAdmin(){
 
             if(!isset($_SESSION['admin'])){
