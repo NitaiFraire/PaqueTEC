@@ -75,10 +75,21 @@
                             <a href="#"><i class="fas fa-box"></i> Paquetes</a>
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fas fa-list"></i> Ver Todos</a>
+                                    <a href="<?= baseUrl ?>Paquete/getAll"><i class="fas fa-list"></i> Ver Todos</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-plus"></i> Agregar nuevo</a>
+                                    <a href="<?= baseUrl ?>Paquete/formRegister"><i class="fas fa-plus"></i> Agregar nuevo</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-undo-alt"></i> Devoluciones</a>
+                            <ul>
+                                <li>
+                                    <a href="<?= baseUrl ?>Paquete/getAll"><i class="fas fa-list"></i> Ver Todas</a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl ?>Paquete/formRegister"><i class="fas fa-plus"></i> Agregar nueva</a>
                                 </li>
                             </ul>
                         </li>
