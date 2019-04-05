@@ -1,3 +1,4 @@
+<?php require_once 'Views/layout/header.php'?>
 <div class="container cError">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8 text-center">
@@ -6,3 +7,4 @@
         </div>
     </div>
 </div>
+<?php require_once 'Views/layout/footer.php'?>
