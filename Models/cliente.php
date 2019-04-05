@@ -80,6 +80,15 @@ class Cliente extends Persona{
         return $clientes;
     }
 
+    public function getClientesPorCiudad(){
+        
+        $sql = "SELECT * FROM clientes WHERE idCiudad = {$this->getIdCiudad()} ORDER BY idCliente DESC";
+
+        $clientes = $this->db->query($sql);
+
+        return $clientes;
+    }
+
     /* /Funciones de modelo */
 
 }
