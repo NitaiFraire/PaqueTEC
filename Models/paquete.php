@@ -188,6 +188,40 @@ class Paquete{
         return $result;
     }
 
+    public function getAll(){
+        
+        $sql = "SELECT  paq.idPaquete, paq.diaAlta, paq.fechaEnvio, paq.fechaEntrega, paq.horaEntrega,
+                        paq.contenido, paq.observaciones, paq.estado, paq.idEmpleado,
+                        CONCAT(cli.nombre, ' ', cli.paterno) AS cliente,
+                        CONCAT(emp.nombre, ' ', emp.paterno) AS empleado
+                FROM    paquetes paq, clientes cli, empleados emp
+                WHERE   paq.idCliente = cli.idCliente AND
+
+                        paq.idEmpleado = emp.idEmpleado
+                ORDER BY idPaquete DESC;";
+
+        $paquetes = $this->db->query($sql);
+
+        return $paquetes;
+    }
+
+    public function updateEstado(){
+        
+        $sql = "UPDATE  paquetes SET estado = '{$this->getEstado()}'
+                WHERE   idPaquete = '{$this->getIdPaquete()}'";
+
+        $save = $this->db->query($sql);
+        
+        $result = false;
+
+        if($save){
+
+            $result = true;
+        }
+        
+        return $result;
+    }
+
     /* /Funciones de modelo */
 
 
