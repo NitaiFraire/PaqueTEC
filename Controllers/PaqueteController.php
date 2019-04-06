@@ -6,6 +6,11 @@
 
         public function index(){
             
+            Utils::isIdentified();
+
+            $paquete = new Paquete();
+            $paquetes = $paquete->getAll();
+            
             require_once 'Views/paquete/listadoPaquetes.php';
         }
 
@@ -69,5 +74,23 @@
             }
 
             header('Location:' . baseUrl . 'Paquete/formRegister');
+        }
+
+        public function estado(){
+            
+            Utils::isIdentified();
+
+            if(isset($_POST['paqueteId']) && isset($_POST['estado'])){
+
+                $idPaquete = $_POST['paqueteId'];
+                $estado = $_POST['estado'];
+
+                $paquete = new Paquete();
+                $paquete->setIdPaquete($idPaquete);
+                $paquete->setEstado($estado);
+                $paquete->updateEstado();
+
+                header('Location:' . baseUrl . 'Paquete/index');
+            }
         }
     }
