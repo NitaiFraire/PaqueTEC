@@ -211,7 +211,7 @@ class Paquete{
                 WHERE   idPaquete = '{$this->getIdPaquete()}'";
 
         $save = $this->db->query($sql);
-        
+
         $result = false;
 
         if($save){
@@ -222,7 +222,26 @@ class Paquete{
         return $result;
     }
 
-    /* /Funciones de modelo */
+    public function getPorEstado(){
+        
+        $sql = "SELECT  paq.idPaquete, paq.diaAlta, paq.fechaEnvio, paq.fechaEntrega, paq.horaEntrega,
+                        paq.contenido, paq.observaciones, paq.estado, paq.idEmpleado,
+                        CONCAT(cli.nombre, ' ', cli.paterno) AS cliente,
+                        CONCAT(emp.nombre, ' ', emp.paterno) AS empleado
+                FROM    paquetes paq, clientes cli, empleados emp
+                WHERE   paq.idCliente = cli.idCliente AND
+
+                        paq.idEmpleado = emp.idEmpleado AND
+
+                        paq.estado = '{$this->getEstado()}'
+                ORDER BY idPaquete DESC;";
+        
+        $paquetes = $this->db->query($sql);
+
+        return $paquetes;
+    }
+
+    /* /Funciones de modelo '{$this->getEstado()}'*/
 
 
 }
