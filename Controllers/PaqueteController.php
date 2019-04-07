@@ -14,6 +14,28 @@
             require_once 'Views/paquete/listadoPaquetes.php';
         }
 
+        public function registrados(){
+            
+            Utils::isIdentified();
+            
+            require_once 'Views/paquete/listadoPaquetesRegistrados.php';
+        }
+
+        public function enviados(){
+            
+            Utils::isIdentified();
+            
+            require_once 'Views/paquete/listadoPaquetesEnviados.php';
+        }
+
+        public function entregados(){
+            
+            Utils::isIdentified();
+            
+            require_once 'Views/paquete/listadoPaquetesEntregados.php';
+        }
+
+
         public function formRegister(){
 
             Utils::isIdentified();
@@ -90,7 +112,18 @@
                 $paquete->setEstado($estado);
                 $paquete->updateEstado();
 
-                header('Location:' . baseUrl . 'Paquete/index');
+                if($estado == 0){
+
+                    header('Location:' . baseUrl . 'Paquete/index');
+
+                }elseif($estado == 1){
+
+                    header('Location:' . baseUrl . 'Paquete/enviados');
+
+                }else{
+
+                    header('Location:' . baseUrl . 'Paquete/entregados');
+                }
             }
         }
     }
