@@ -27,15 +27,20 @@
       <td><?=$paquete->horaEntrega?></td>
       <td><?=$paquete->contenido?></td>
       <td><?=$paquete->observaciones?></td>
-      <td>
-          <?php if($paquete->estado == 0):?>
-            registrado
-          <?php elseif($paquete->estado == 1):?>
+      
+      <?php if($paquete->estado == 0):?>
+        <th scope="row" class="alert alert-info">
+            Registrado
+        </th>
+      <?php elseif($paquete->estado == 1):?>
+        <th scope="row"  class="alert alert-danger">
             Enviado
-          <?php else: ?>
+        </th>
+      <?php else: ?>
+        <th scope="row"  class="alert alert-success">
             Entregado
-          <?php endif;?>
-      </td>
+        </th>
+      <?php endif;?>
     </tr>
     <?php endwhile;?>
   </tbody>
