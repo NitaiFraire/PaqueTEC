@@ -29,7 +29,7 @@
             return $paises;
         }
 
-        public static function showclientes(){
+        public static function showClientesPorCiudad(){
             
             require_once 'Models/cliente.php';
 
@@ -40,6 +40,20 @@
             $clientes = $cliente->getClientesPorCiudad();
 
             return $clientes;
+        }
+
+        // por estado de registro, enviados o entreados
+        public static function showPaquetesPorEstado($estado){
+
+            require_once 'Models/paquete.php';
+    
+            $paquete = new Paquete();
+            $paquete->setEstado($estado);
+            $paquetes = $paquete->getPorEstado();
+    
+            return $paquetes;
+
+            
         }
 
         public static function isAdmin(){
