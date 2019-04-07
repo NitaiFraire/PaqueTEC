@@ -13,7 +13,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="cliente">Cliente</label>
-                    <?php $clientes = Utils::showclientes() ?>
+                    <?php $clientes = Utils::showClientesPorCiudad(); ?>
                     <select name="cliente" id="cliente" class="form-control custom-select" required>
                         <?php while($cliente = $clientes->fetch_object()): ?>
                             <option value="<?= $cliente->idCliente?>">
