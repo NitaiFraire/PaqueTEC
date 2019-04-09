@@ -89,6 +89,15 @@
                                 <li>
                                     <a href="<?= baseUrl ?>Paquete/entregados"><i class="fas fa-box-open"></i> Entregados</a>
                                 </li>
+                                <li>
+                                    <a href="<?= baseUrl ?>Paquete/entregasPorFecha"><i class="fas fa-calendar-day"></i> Entrega por fecha</a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl ?>Paquete/entregasPorCliente"><i class="fas fa-user-check"></i> Entrega por cliente</a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl ?>Paquete/entregasPorEmpleado"><i class="fas fa-user-tie"></i> Entrega por empleado</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -99,6 +108,9 @@
                                 </li>
                                 <li>
                                     <a href="<?= baseUrl ?>Devolucion/getAll"><i class="fas fa-list"></i> Ver Todas</a>
+                                </li>
+                                <li>
+                                    <a href="<?= baseUrl ?>Paquete/devolucionPorEmpleado"><i class="fas fa-user-tie"></i> Devolución por empleado</a>
                                 </li>
                             </ul>
                         </li>
