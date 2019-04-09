@@ -137,6 +137,19 @@ class Empleado extends Persona{
         return $empleados;
     }
 
+    public function getPaquetesEmpleados(){
+        
+        $sql = "SELECT  idEmpleado, CONCAT(nombre, ' ', paterno) AS nombre
+                
+                FROM    empleados
+                
+                ORDER BY idEmpleado DESC";
+        
+        $empleados = $this->db->query($sql);
+
+        return $empleados;
+    }
+
     /* /funciones de modelo */
 }
 
