@@ -42,6 +42,26 @@
             return $clientes;
         }
 
+        public static function showClientes(){
+            
+            require_once 'Models/cliente.php';
+
+            $cliente = new Cliente();
+            $clientes = $cliente->getPaquetesClientes();
+
+            return $clientes;
+        }
+
+        public static function showEmpleados(){
+            
+            require_once 'Models/empleado.php';
+
+            $empleado = new Empleado();
+            $empleados = $empleado->getPaquetesEmpleados();
+
+            return $empleados;
+        }
+
         // por estado de registro, enviados o entreados
         public static function showPaquetesPorEstado($estado){
 
