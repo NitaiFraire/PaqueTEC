@@ -241,6 +241,75 @@ class Paquete{
         return $paquetes;
     }
 
+    public function getPorFecha(){
+        
+        $sql = "SELECT  paq.idPaquete, paq.fechaEntrega, paq.horaEntrega,
+                        CONCAT(cli.nombre, ' ', cli.paterno) AS cliente
+                
+                FROM    paquetes paq, clientes cli
+                
+                WHERE   paq.idCliente = cli.idCliente AND
+                        paq.fechaEntrega = '{$this->getFechaEntrega()}'
+                
+                ORDER BY idPaquete DESC";
+        
+        $paquetes = $this->db->query($sql);
+
+        return $paquetes;
+    }
+
+    public function getPorCliente(){
+        
+        $sql = "SELECT  paq.idPaquete, paq.fechaEntrega, paq.contenido,
+                        CONCAT(emp.nombre, ' ', emp.paterno) AS empleado
+                
+                FROM    paquetes paq, empleados emp
+                
+                WHERE   paq.idEmpleado = emp.idEmpleado AND
+                        paq.idCliente = '{$this->getIdCliente()}' AND
+                        paq.estado = 2";
+
+        $paquetes = $this->db->query($sql);
+
+        return $paquetes;
+    }
+
+    public function getPorEmpleado(){
+        
+        $sql = "SELECT  paq.idPaquete, paq.fechaEntrega, paq.horaEntrega, paq.contenido,
+                        CONCAT(cli.nombre, ' ', cli.paterno) AS cliente
+                
+                FROM    paquetes paq, clientes cli
+                
+                WHERE   paq.idCliente = cli.idCliente AND
+                        paq.idEmpleado = '{$this->getIdEmpleado()}' AND
+                        paq.estado = 2;";
+        
+        $paquetes = $this->db->query($sql);
+
+        return $paquetes;
+    }
+
+    public function getDevolucionPorEmpleado(){
+        
+        $sql = "SELECT  paq.idPaquete, paq.fechaEntrega,    
+                        CONCAT(cli.nombre, ' ', cli.paterno) AS cliente,
+                        dev.fechaDevolucion, dev.motivoDevolucion
+                
+                FROM    paquetes paq, clientes cli, devoluciones dev
+
+                WHERE   dev.idPaquete = paq.idPaquete AND
+                        paq.idCliente = cli.idCliente AND
+                        paq.idEmpleado = '{$this->getIdEmpleado()}' AND
+                        paq.estado = 3
+
+                ORDER BY idDevolucion DESC";
+
+        $devoluciones = $this->db->query($sql);
+
+        return $devoluciones;
+    }
+
     /* /Funciones de modelo '{$this->getEstado()}'*/
 
 
