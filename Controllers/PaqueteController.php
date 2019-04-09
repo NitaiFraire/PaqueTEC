@@ -11,28 +11,28 @@
             $paquete = new Paquete();
             $paquetes = $paquete->getAll();
             
-            require_once 'Views/paquete/listadoPaquetes.php';
+            require_once 'Views/paquete/listaPaquetes.php';
         }
 
         public function registrados(){
             
             Utils::isIdentified();
             
-            require_once 'Views/paquete/listadoPaquetesRegistrados.php';
+            require_once 'Views/paquete/listaPaquetesRegistrados.php';
         }
 
         public function enviados(){
             
             Utils::isIdentified();
             
-            require_once 'Views/paquete/listadoPaquetesEnviados.php';
+            require_once 'Views/paquete/listaPaquetesEnviados.php';
         }
 
         public function entregados(){
             
             Utils::isIdentified();
             
-            require_once 'Views/paquete/listadoPaquetesEntregados.php';
+            require_once 'Views/paquete/listaPaquetesEntregados.php';
         }
 
 
@@ -120,10 +120,115 @@
 
                     header('Location:' . baseUrl . 'Paquete/enviados');
 
-                }else{
+                }elseif($estado == 2){
 
                     header('Location:' . baseUrl . 'Paquete/entregados');
+
+                }else{
+
+                    header('Location:' . baseUrl . 'Devolucion/formRegister&idPaquete=' . $idPaquete);
                 }
             }
         }
+
+        public function entregasPorFecha(){
+            
+            Utils::isIdentified();
+
+            require_once 'Views/paquete/listaEntregasPorFecha.php';
+        }
+
+        public function buscarPorFecha(){
+            
+            if(isset($_POST['fecha'])){
+
+                $fechaEntrega = $_POST['fecha'];
+
+                $paquete = new Paquete();
+                $paquete->setFechaEntrega($fechaEntrega);
+                $paquetes = $paquete->getPorFecha();
+
+                require_once 'Views/paquete/listaEntregasPorFecha.php';
+
+            }else{
+
+                header('Location: ' . baseUrl . 'Paquete/index');
+            }
+        }
+
+        public function entregasPorCliente(){
+
+            Utils::isIdentified();
+
+            require_once 'Views/paquete/listaEntregasPorCliente.php';
+        }
+
+        public function buscarPorCliente(){
+            
+            if(isset($_POST['idCliente'])){
+                
+                $idCliente = $_POST['idCliente'];
+
+                $paquete = new Paquete();
+                $paquete->setIdCliente($idCliente);
+                $paquetes = $paquete->getPorCliente();
+                
+                require_once 'Views/paquete/listaEntregasPorCliente.php';
+            
+            }else{
+
+                header('Location: ' . baseUrl . 'Paquete/index');
+            }
+        }
+
+
+        public function entregasPorEmpleado(){
+
+            Utils::isIdentified();
+
+            require_once 'Views/paquete/listaEntregasPorEmpleado.php';
+        }
+
+        public function buscarPorEmpleado(){
+            
+            if(isset($_POST['idEmpleado'])){
+                
+                $idEmpleado = $_POST['idEmpleado'];
+
+                $paquete = new Paquete();
+                $paquete->setIdEmpleado($idEmpleado);
+                $paquetes = $paquete->getPorEmpleado();
+                
+                require_once 'Views/paquete/listaEntregasPorEmpleado.php';
+            
+            }else{
+
+                header('Location: ' . baseUrl . 'Paquete/index');
+            }
+        }   
+
+        public function devolucionPorEmpleado(){
+
+            Utils::isIdentified();
+    
+            require_once 'Views/devolucion/listaDevolucionesPorEmpleado.php';
+        }
+
+        public function buscarDevolucionPorEmpleado(){
+            
+            if(isset($_POST['idEmpleado'])){
+                
+                $idEmpleado = $_POST['idEmpleado'];
+
+                $paquete = new Paquete();
+                $paquete->setIdEmpleado($idEmpleado);
+                $paquetes = $paquete->getDevolucionPorEmpleado();
+                
+                require_once 'Views/devolucion/listaDevolucionesPorEmpleado.php';
+            
+            }else{
+
+                header('Location: ' . baseUrl . 'Paquete/index');
+            }
+        }   
     }
