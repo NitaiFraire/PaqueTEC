@@ -89,6 +89,19 @@ class Cliente extends Persona{
         return $clientes;
     }
 
+    public function getPaquetesClientes(){
+        
+        $sql = "SELECT  idCliente, CONCAT(nombre, ' ', paterno) AS nombre
+                
+                FROM    clientes
+                
+                ORDER BY idCliente DESC";
+        
+        $clientes = $this->db->query($sql);
+
+        return $clientes;
+    }
+
     /* /Funciones de modelo */
 
 }
