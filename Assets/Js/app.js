@@ -87,3 +87,36 @@ $(document).ready(function(){
     });
 
 });
+
+$(document).ready(function(){
+    
+    $("#peso").change(function(){
+        
+        var valor = $(this).val();
+        var precio;
+        
+        if(valor == 1){
+            
+            $("#precio").html("100");
+            precio = $("#precio").html();
+            $("#precioEnvio").val(precio);
+            
+        }else if(valor == 2){
+
+            $("#precio").html("300");
+            precio = $("#precio").html();
+            $("#precioEnvio").val(precio);
+
+        }else if(valor == 3){
+
+            $("#precio").html("500");
+            precio = $("#precio").html();
+            $("#precioEnvio").val(precio);
+
+        }else{
+            $("#precio").html("800");
+            precio = $("#precio").html();
+            $("#precioEnvio").val(precio);
+        }
+    });
+});
