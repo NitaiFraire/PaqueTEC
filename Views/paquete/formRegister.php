@@ -24,11 +24,25 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="peso">Peso</label>
-                    <input type="text" class="form-control" id="peso" name="peso" required>
+                    <select name="peso" id="peso" class="form-control custom-select" required>
+                        <option value="1">
+                            5 - 9 kg
+                        </option>
+                        <option value="2">
+                            10 - 14 kg
+                        </option>
+                        <option value="3">
+                            15 - 20 kg
+                        </option>
+                        <option value="4">
+                            21 en adelante 
+                        </option>
+                    </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="precioEnvio">Precio de envio</label>
-                    <input type="text" class="form-control" id="precioEnvio" name="precioEnvio" required>
+                    <label for="precio">Precio de envio</label>
+                    <p id="precio"></p>
+                    <input type="hidden" name="precioEnvio" id="precioEnvio" value="">
                 </div>
             </div>
             <div class="form-row">
