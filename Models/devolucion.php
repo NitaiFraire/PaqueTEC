@@ -95,7 +95,7 @@ class Devolucion{
     public function getAll(){
         
         $sql = "SELECT  dev.*,
-                        paq.diaAlta, paq.fechaEnvio,
+                        paq.fechaAlta, paq.fechaEnvio,
                         CONCAT(emp.nombre, ' ', emp.paterno) AS empleado,
                         CONCAT(cli.nombre, ' ', cli.paterno) AS cliente
                 

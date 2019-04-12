@@ -10,7 +10,7 @@ class Paquete{
     private $fechaEnvio;
     private $contenido;
     private $peso;
-    private $diaAlta;
+    private $fechaAlta;
     private $precioEnvio;
     private $observaciones;
     private $fechaEntrega;
@@ -93,14 +93,14 @@ class Paquete{
     }
 
 
-    public function getDiaAlta(){
+    public function getFechaAlta(){
 
-        return $this->diaAlta;
+        return $this->fechaAlta;
     }
 
-    public function setDiaAlta($diaAlta){
+    public function setFechaAlta($fechaAlta){
 
-        $this->diaAlta = $diaAlta;
+        $this->fechaAlta = $fechaAlta;
     }
 
 
@@ -168,7 +168,7 @@ class Paquete{
                                             '{$this->getFechaEnvio()}',
                                             '{$this->getContenido()}',
                                             '{$this->getPeso()}',
-                                            '{$this->getDiaAlta()}',
+                                            '{$this->getFechaAlta()}',
                                             '{$this->getPrecioEnvio()}',
                                             '{$this->getObservaciones()}',
                                             '{$this->getFechaEntrega()}',
@@ -190,7 +190,7 @@ class Paquete{
 
     public function getAll(){
         
-        $sql = "SELECT  paq.idPaquete, paq.diaAlta, paq.fechaEnvio, paq.fechaEntrega, paq.horaEntrega,
+        $sql = "SELECT  paq.idPaquete, paq.fechaAlta, paq.fechaEnvio, paq.fechaEntrega, paq.horaEntrega,
                         paq.contenido, paq.observaciones, paq.estado, paq.idEmpleado,
                         CONCAT(cli.nombre, ' ', cli.paterno) AS cliente,
                         CONCAT(emp.nombre, ' ', emp.paterno) AS empleado
@@ -224,7 +224,7 @@ class Paquete{
 
     public function getPorEstado(){
         
-        $sql = "SELECT  paq.idPaquete, paq.diaAlta, paq.fechaEnvio, paq.fechaEntrega, paq.horaEntrega,
+        $sql = "SELECT  paq.idPaquete, paq.fechaAlta, paq.fechaEnvio, paq.fechaEntrega, paq.horaEntrega,
                         paq.contenido, paq.observaciones, paq.estado, paq.idEmpleado,
                         CONCAT(cli.nombre, ' ', cli.paterno) AS cliente,
                         CONCAT(emp.nombre, ' ', emp.paterno) AS empleado
@@ -310,7 +310,7 @@ class Paquete{
         return $devoluciones;
     }
 
-    /* /Funciones de modelo '{$this->getEstado()}'*/
+    /* /Funciones de modelo */
 
 
 }
