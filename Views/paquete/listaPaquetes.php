@@ -21,7 +21,7 @@
       <th scope="row"><?=$paquete->idPaquete?></th>
       <td><?=$paquete->cliente?></td>
       <td><?=$paquete->empleado?></td>
-      <td><?=$paquete->diaAlta?></td>
+      <td><?=$paquete->fechaAlta?></td>
       <td><?=$paquete->fechaEnvio?></td>
       <td><?=$paquete->fechaEntrega?></td>
       <td><?=$paquete->horaEntrega?></td>

@@ -20,7 +20,7 @@
       <td><?=$devolucion->idPaquete?></td>
       <td><?=$devolucion->empleado?></td>
       <td><?=$devolucion->cliente?></td>
-      <td><?=$devolucion->diaAlta?></td>
+      <td><?=$devolucion->fechaAlta?></td>
       <td><?=$devolucion->fechaEnvio?></td>
       <td><?=$devolucion->fechaDevolucion?></td>
       <td><?=$devolucion->motivoDevolucion?></td>
