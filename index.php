@@ -7,26 +7,13 @@
     require_once 'Config/db.php';
     require_once 'Config/parameters.php';
     
-/*     if(isset($_SESSION['identified'])){
-
-        require_once 'Views/layout/header.php';
-
-    }else{
-
-        if(!isset($_GET['controller']) && !isset($_GET['action'])){
-
-            require_once 'Views/usuario/index.php';
-        }
-    } 
-*/
-    
     
     if(isset($_GET['controller'])){
 
         $nameController = $_GET['controller'] . 'Controller';
 
     }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
-
+    
         $nameController = controllerDefault;
 
     }else{
@@ -40,11 +27,11 @@
 
         if(isset($_GET['action']) && method_exists($controller, $_GET['action'])){
 
-            $action = $_GET['action'];
-            $controller->$action();
-        
+                $action = $_GET['action'];
+                $controller->$action();
+    
         }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
-
+        
             $actionDefault = actionDefault;
             $controller->$actionDefault();
 
@@ -57,11 +44,5 @@
 
         Utils::showError();
     } 
-
-/*     if(isset($_SESSION['identified'])){
-
-        require_once 'Views/layout/footer.php';
-    }
- */
 
 ?>
