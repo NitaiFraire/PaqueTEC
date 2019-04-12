@@ -69,7 +69,7 @@
                         $paquete->setFechaEnvio($fechaEnvio);
                         $paquete->setContenido($contenido);
                         $paquete->setPeso($peso);
-                        $paquete->setDiaAlta($fechaAlta);
+                        $paquete->setFechaAlta($fechaAlta);
                         $paquete->setPrecioEnvio($precioEnvio);
                         $paquete->setObservaciones($observaciones);
                         $paquete->setFechaEntrega($fechaEntrega);
