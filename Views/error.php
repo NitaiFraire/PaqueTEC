@@ -1,4 +1,8 @@
-<?php require_once 'Views/layout/header.php'?>
+<?php if(isset($_SESSION['identified'])): ?>
+    <?php require_once 'Views/layout/header.php'?>
+<?php else: ?>
+    <?php require_once 'Views/layout/headerError.php'?>
+<?php endif; ?>
 <div class="container cError">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8 text-center">
