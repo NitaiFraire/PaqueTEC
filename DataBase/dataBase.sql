@@ -163,16 +163,20 @@ CREATE TABLE paquetes(
     idCliente           int(255) not null,
     idEmpleado          int(255) not null,
     idPaquete           int(255) auto_increment not null,
+    fechaAlta           date not null,
+    fechaEntrega        date not null,
     fechaEnvio          date not null,
+    horaEntrega         time,
     contenido           varchar(255) not null,
     peso                float(100, 2) not null,
-    diaAlta             date not null,
     precioEnvio         float(100, 2) not null,
     observaciones       varchar(255),
-    fechaEntrega        date not null,
-    horaEntrega         time,
+    estado              int(1),
 
     CONSTRAINT pk_id_paquete PRIMARY KEY(idPaquete),
+
+    # 0 = registrado, 1 = enviado, 2 = entregado, 3 = devuelto #
+    CONSTRAINT ck_estado CHECK(estado = 0 OR estado = 1 OR estado = 2 OR estado = 3),
 
     CONSTRAINT fk_paquete_cliente FOREIGN KEY(idCliente) REFERENCES clientes(idCliente),
     CONSTRAINT fk_paquete_empleado FOREIGN KEY(idEmpleado) REFERENCES empleados(idEmpleado)
