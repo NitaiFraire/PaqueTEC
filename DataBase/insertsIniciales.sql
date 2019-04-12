@@ -390,6 +390,8 @@ INSERT INTO clientes VALUES(9, 5, 3, 2, null, 'JAVIER', 'RODRIGUEZ', 'BALDERAS',
 
 #****** Empleados ******#
 
+# password : qweasdzxc #
+INSERT INTO empleados VALUES(1, 1, 1, 1, null, 'Nitai', 'Fernandez', 'Fraire', 30, '0101010101010', '101010101010101010', 'MASCULINO', 'nitai@hotmail.com', '$2y$04$oc37dqEkM6D6IQmZ1sClOegGSF3ACi69g2WHBTuQ1ICbqWV67YIyu', 2552316538, 'percadores #233', 0);
 INSERT INTO empleados VALUES(1, 1, 1, 1, null, 'ROBERTO', 'CAMPOS', 'SALAZAR', 30, 'CASR900502PD2', 'CASR900502HSLMLB01', 'MASCULINO', 'roberto@hotmail.com', '12345678', 2552316538, 'percadores #233', 0);
 INSERT INTO empleados VALUES(5, 3, 2, 1, null, 'MARIA', 'PEREZ', 'OCAMPO', 44, 'PEOM250704676', 'PEOM250704MSLRCR07', 'FEMENINO', 'maria123@hotmail.com', 'passworddd', 4336549087, 'flamencos #238', 1);
 INSERT INTO empleados VALUES(9, 5, 3, 2, null, 'ANDREA', 'PAREDES', 'REYES', 53, 'PARA2505049F7', 'PARA250504MSLRYN08', 'FEMENINO', 'andiLove@hotmail.com', '43214321432', 8779785765, 'garibaldi #434', 2);
