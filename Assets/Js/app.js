@@ -27,8 +27,7 @@ $(document).ready(function(){
     
         var id=$(this).val();
         var dataString = 'idPais='+ id;
-        var direccion = 'http://localhost/Actividades/Paqueteria/Ubicacion/getEstados&' + dataString;
-        console.log(direccion);
+        var direccion = 'http://localhost/PaqueTEC/Ubicacion/getEstados&' + dataString;
 
         $("#estado").find('option').remove();
         $("#ciudad").find('option').remove();
@@ -38,7 +37,6 @@ $(document).ready(function(){
         
             type: "GET",
             url: direccion,
-            /* data: dataString, */
             cache: false,
             success: function(html){
                 
@@ -51,13 +49,12 @@ $(document).ready(function(){
     
         var id=$(this).val();
         var dataString = 'idEstado='+ id;
-        var direccion = 'http://localhost/Actividades/Paqueteria/Ubicacion/getCiudades&' + dataString;
+        var direccion = 'http://localhost/PaqueTEC/Ubicacion/getCiudades&' + dataString;
 
         $.ajax({
 
             type: "GET",
             url: direccion,
-            /* data: dataString */
             cache: false,
             success: function(html){
             
@@ -70,14 +67,13 @@ $(document).ready(function(){
     
         var id=$(this).val();
         var dataString = 'idCiudad='+ id;
-        var direccion = 'http://localhost/Actividades/Paqueteria/Ubicacion/getColonias&' + dataString;
+        var direccion = 'http://localhost/PaqueTEC/Ubicacion/getColonias&' + dataString;
         console.log(direccion);
 
         $.ajax({
 
             type: "GET",
             url: direccion,
-            /* data: dataString */
             cache: false,
             success: function(html){
             
