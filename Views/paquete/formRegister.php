@@ -41,8 +41,8 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="precio">Precio de envio</label>
-                    <p id="precio"></p>
-                    <input type="hidden" name="precioEnvio" id="precioEnvio" value="">
+                    <p id="precio">100</p>
+                    <input type="hidden" name="precioEnvio" id="precioEnvio" value="100">
                 </div>
             </div>
             <div class="form-row">
@@ -58,11 +58,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="diaAlta">Fecha de entrega</label>
-                    <input type="date" class="form-control" id="diaAlta" name="fechaEntrega" required> 
+                    <input type="date" class="form-control" id="diaEntrega" name="fechaEntrega" required> 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="diaEnvio">hora de entrega</label>
-                    <input type="time" class="form-control" id="diaEnvio" name="horaEntrega" required> 
+                    <input type="time" class="form-control" id="horaEntrega" name="horaEntrega" required> 
                 </div>
             </div>
             <div class="form-row">
