@@ -165,14 +165,14 @@ class Paquete{
         $sql = "INSERT INTO paquetes VALUES('{$this->getIdCliente()}',
                                             '{$this->getIdEmpleado()}',
                                             NULL,
+                                            '{$this->getFechaAlta()}',
+                                            '{$this->getFechaEntrega()}',
                                             '{$this->getFechaEnvio()}',
+                                            '{$this->getHoraEntrega()}',
                                             '{$this->getContenido()}',
                                             '{$this->getPeso()}',
-                                            '{$this->getFechaAlta()}',
                                             '{$this->getPrecioEnvio()}',
                                             '{$this->getObservaciones()}',
-                                            '{$this->getFechaEntrega()}',
-                                            '{$this->getHoraEntrega()}',
                                             '{$this->getEstado()}')";
         
         $save = $this->db->query($sql);
